@@ -87,11 +87,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // Find the product card to get the image source
         const productBtn = Array.from(addToCartButtons).find(btn => btn.dataset.product === item.name);
         const productCard = productBtn ? productBtn.closest('.product-card') : null;
+        
         let imgSrc = 'https://via.placeholder.com/90'; // Fallback image
+        
         if (productCard) {
             const imgEl = productCard.querySelector('img');
             if (imgEl) imgSrc = imgEl.src;
+        } else {
+            // Fallback for adding from product-detail.html
+            const detailImg = document.querySelector('.product-image-large img');
+            if (detailImg) imgSrc = detailImg.src;
         }
+
 
         const cartItem = document.createElement("div");
         cartItem.classList.add("cart-item");
@@ -113,6 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update subtotal
     subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+    
+    // In a real site, you would save 'cart' to localStorage here
   }
 
   // --- Slider Functionality ---
@@ -214,9 +223,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
-  // Checkout Button (placeholder alert)
+  // *** UPDATED CHECKOUT BUTTON ***
   checkoutBtn.addEventListener("click", () => {
-    alert("Checkout page coming soon!");
+    // On a real site, you would save the 'cart' array to localStorage here
+    // so the checkout.html page can read it.
+    window.location.href = 'checkout.html';
   });
 
   // Slider
@@ -241,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener('click', toggleMobileNav);
   });
 
-  // --- NEW: SCROLL ANIMATION OBSERVER ---
+  // --- SCROLL ANIMATION OBSERVER ---
   const animatedElements = document.querySelectorAll("[data-animate]");
 
   const observer = new IntersectionObserver((entries) => {
@@ -265,6 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Initialize cart on page load (to show empty message)
+  // In a real site, you'd load 'cart' from localStorage here first
   updateCart();
 
 });

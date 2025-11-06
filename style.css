@@ -910,3 +910,140 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* ======== NEW: CHECKOUT PAGE STYLES ======== */
+.checkout-container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+.checkout-container h1 {
+  font-size: 2.5em;
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2.5rem;
+}
+.checkout-layout-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+}
+.checkout-section {
+  margin-bottom: 2.5rem;
+}
+.checkout-section h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* --- Checkout Form --- */
+.checkout-form .form-group {
+  margin-bottom: 1.5rem;
+}
+.checkout-form label {
+  display: block;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--primary-text);
+  margin-bottom: 0.5rem;
+}
+.checkout-form .form-control {
+  width: 100%;
+  padding: 14px;
+  font-size: 1em;
+  font-family: var(--font-family);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--primary-text);
+  transition: border-color 0.3s;
+}
+.checkout-form .form-control:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* --- Order Summary --- */
+.order-summary-box {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.order-summary-box hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 1rem 0;
+}
+.order-item,
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: var(--secondary-text);
+  font-size: 0.95em;
+}
+.order-item span {
+  flex: 1;
+}
+.order-total.grand-total {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+.order-total.grand-total strong {
+  color: var(--accent-color);
+}
+
+/* --- Payment Methods --- */
+.payment-methods {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.payment-methods h3 {
+  font-size: 1.2em;
+  color: var(--primary-text);
+  margin-bottom: 1rem;
+}
+.payment-option {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+.payment-option input[type="radio"] {
+  margin-right: 0.75rem;
+  accent-color: var(--accent-color);
+}
+.payment-option label {
+  font-weight: 500;
+  color: var(--primary-text);
+  cursor: pointer;
+}
+.payment-instructions {
+  font-size: 0.9em;
+  color: var(--secondary-text);
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+/* --- Responsive Checkout --- */
+@media (max-width: 900px) {
+  .checkout-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .checkout-order-summary {
+    /* Move order summary to top on mobile */
+    grid-row: 1;
+  }
+}
