@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ZAYNAR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header { position: sticky; top: 0; z-index: 100; background-color: rgba(0,0,0,0.95); border-bottom: 1px solid rgba(212,175,55,0.2); }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; max-width: 1400px; margin: 0 auto; }
+    .logo { font-size: 1.8rem; font-weight: 700; color: #d4af37; letter-spacing: 2px; }
+    .nav-links { display: flex; list-style: none; gap: 2.5rem; }
+    .nav-links a { color: #fff; text-decoration: none; font-weight: 400; transition: color 0.3s ease; font-size: 0.95rem; }
+    .nav-links a:hover, .nav-links a.active { color: #d4af37; }
+    .nav-icons { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-icons a { color: #fff; font-size: 1.2rem; transition: color 0.3s ease; position: relative; }
+    .nav-icons a:hover { color: #d4af37; }
+    #cart-item-count { position: absolute; top: -8px; right: -8px; background-color: #d4af37; color: #000; font-size: 0.7rem; font-weight: 600; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .mobile-nav-menu { display: none; flex-direction: column; background-color: rgba(0,0,0,0.98); padding: 1rem 5%; border-top: 1px solid rgba(212,175,55,0.2);}
+    .mobile-nav-menu.active { display: flex;}
+    .mobile-link { color: #fff; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); transition: color 0.3s ease;}
+    .mobile-link:hover { color: #d4af37;}
+    .about-hero {
+      background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(0,0,0,0.9) 100%), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200') center/cover;
+      padding: 8rem 5% 4rem; text-align: center;
+    }
+    .about-hero h1 { font-size: 3.5rem; font-weight: 700; color: #d4af37; margin-bottom: 1rem; letter-spacing: 3px;}
+    .about-hero p { font-size: 1.2rem; color: #ccc; max-width: 700px; margin: 0 auto;}
+    .about-content { max-width: 1200px; margin: 0 auto; padding: 5rem 5%; }
+    .about-section { margin-bottom: 5rem; }
+    .about-section h2 { font-size: 2.5rem; color: #d4af37; margin-bottom: 2rem; font-weight: 600;}
+    .about-section p { font-size: 1.1rem; color: #ddd; margin-bottom: 1.5rem; line-height: 1.8;}
+    .story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 3rem; margin-top: 3rem;}
+    .story-card { background: linear-gradient(145deg, rgba(212,175,55,0.05) 0%, rgba(0,0,0,0.5) 100%); padding: 2.5rem; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2); transition: transform 0.3s ease, border-color 0.3s ease;}
+    .story-card:hover { transform: translateY(-10px); border-color: #d4af37;}
+    .story-card i { font-size: 3rem; color: #d4af37; margin-bottom: 1.5rem;}
+    .story-card h3 { font-size: 1.8rem; color: #fff; margin-bottom: 1rem; font-weight: 600;}
+    .story-card p { font-size: 1rem; color: #bbb; line-height: 1.7;}
+    .values-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem; margin-top: 3rem;}
+    .value-box { text-align: center; padding: 2rem; background: rgba(212,175,55,0.03); border-radius: 10px; border: 1px solid rgba(212,175,55,0.15); transition: all 0.3s ease;}
+    .value-box:hover { background: rgba(212,175,55,0.08); border-color: #d4af37;}
+    .value-box i { font-size: 2.5rem; color: #d4af37; margin-bottom: 1rem;}
+    .value-box h4 { font-size: 1.3rem; color: #fff; margin-bottom: 0.5rem; font-weight: 600;}
+    .value-box p { font-size: 0.95rem; color: #aaa;}
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 3rem; margin-top: 3rem;}
+    .team-member { text-align: center; background: rgba(212,175,55,0.03); padding: 2rem; border-radius: 15px; border: 1px solid rgba(212,175,55,0.15); transition: all 0.3s ease;}
+    .team-member:hover { transform: translateY(-10px); border-color: #d4af37;}
+    .team-member img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 3px solid #d4af37; }
+    .team-member h3 { font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; font-weight: 600;}
+    .team-member .role { font-size: 1rem; color: #d4af37; margin-bottom: 1rem; font-weight: 500;}
+    .team-member p { font-size: 0.9rem; color: #bbb;}
+    footer { background-color: #000; border-top: 1px solid rgba(212,175,55,0.2); padding: 3rem 5% 2rem; text-align: center;}
+    .footer-content { max-width: 1200px; margin: 0 auto; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;}
+    .footer-links a { color: #ddd; text-decoration: none; transition: color 0.3s ease;}
+    .footer-links a:hover { color: #d4af37;}
+    .social-icons { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem;}
+    .social-icons a { color: #ddd; font-size: 1.5rem; transition: color 0.3s ease;}
+    .social-icons a:hover { color: #d4af37;}
+    .copyright { color: #888; font-size: 0.9rem;}
+    @media (max-width: 768px) {
+      .nav-links { display: none;}
+      .about-hero h1 { font-size: 2.5rem;}
+      .about-section h2 { font-size: 2rem;}
+      .story-grid,
+      .values-container,
+      .team-grid { grid-template-columns: 1fr;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">ZAYNAR</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#new-arrivals">New</a></li>
+        <li><a href="index.html#watches">Watches</a></li>
+        <li><a href="index.html#clothes">Clothes</a></li>
+        <li><a href="index.html#categories">Categories</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+      <div class="nav-icons">
+        <a href="#" aria-label="My Account"><i class="fa-regular fa-user"></i></a>
+        <a href="index.html#cart" id="cart-btn" aria-label="Open Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cart-item-count">0</span>
+        </a>
+        <a href="#" id="hamburger-btn" aria-label="Open Menu"><i class="fa-solid fa-bars-staggered"></i></a>
+      </div>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav-menu">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="index.html#new-arrivals" class="mobile-link">New</a>
+      <a href="index.html#watches" class="mobile-link">Watches</a>
+      <a href="index.html#clothes" class="mobile-link">Clothes</a>
+      <a href="index.html#categories" class="mobile-link">Categories</a>
+      <a href="about.html" class="mobile-link">About</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+      <a href="#" class="mobile-link">My Account</a>
+    </div>
+  </header>
+
+  <!-- About Hero Section -->
+  <section class="about-hero">
+    <h1>ABOUT ZAYNAR</h1>
+    <p>Redefining Luxury and Style Since 2025</p>
+  </section>
+
+  <!-- About Content -->
+  <div class="about-content">
+    <!-- Our Story -->
+    <div class="about-section">
+      <h2>Our Story</h2>
+      <p>
+        ZAYNAR was born from a passion for timeless elegance and modern sophistication. We believe that true luxury 
+        lies not just in the products you own, but in the confidence they inspire. Our journey began with a simple 
+        vision: to curate a collection that embodies both classic refinement and contemporary style.
+      </p>
+      <p>
+        Every piece in our collection is carefully selected to meet the highest standards of quality and design. 
+        From premium watches that mark life's important moments to minimalist apparel that defines your personal style, 
+        ZAYNAR is your destination for accessories that tell your story.
+      </p>
+      <div class="story-grid">
+        <div class="story-card">
+          <i class="fa-solid fa-gem"></i>
+          <h3>Premium Quality</h3>
+          <p>We source only the finest materials and partner with renowned manufacturers to ensure every product meets our exacting standards.</p>
+        </div>
+        <div class="story-card">
+          <i class="fa-solid fa-palette"></i>
+          <h3>Timeless Design</h3>
+          <p>Our curated collections blend classic elegance with modern aesthetics, creating pieces that transcend fleeting trends.</p>
+        </div>
+        <div class="story-card">
+          <i class="fa-solid fa-heart"></i>
+          <h3>Customer First</h3>
+          <p>Your satisfaction is our priority. We're committed to providing exceptional service and building lasting relationships.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Values -->
+    <div class="about-section">
+      <h2>Our Values</h2>
+      <p>
+        At ZAYNAR, we're guided by principles that shape everything we do. These core values drive our commitment 
+        to excellence and define our relationship with our customers.
+      </p>
+      <div class="values-container">
+        <div class="value-box">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h4>Authenticity</h4>
+          <p>100% genuine products guaranteed</p>
+        </div>
+        <div class="value-box">
+          <i class="fa-solid fa-star"></i>
+          <h4>Excellence</h4>
+          <p>Uncompromising quality in every detail</p>
+        </div>
+        <div class="value-box">
+          <i class="fa-solid fa-handshake"></i>
+          <h4>Integrity</h4>
+          <p>Honest, transparent, and reliable</p>
+        </div>
+        <div class="value-box">
+          <i class="fa-solid fa-lightbulb"></i>
+          <h4>Innovation</h4>
+          <p>Always evolving, always improving</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Mission -->
+    <div class="about-section">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to empower individuals to express their unique style through carefully curated luxury accessories. 
+        We strive to make premium quality accessible while maintaining the exclusivity and sophistication that our 
+        customers deserve. ZAYNAR is more than a brand—it's a lifestyle choice for those who appreciate the finer things.
+      </p>
+      <p>
+        We're committed to sustainable practices, ethical sourcing, and creating a positive impact in our community. 
+        As we grow, we remain dedicated to the values that founded our brand and the customers who trust us with 
+        their most important style decisions.
+      </p>
+    </div>
+
+    <!-- Why Choose Us -->
+    <div class="about-section">
+      <h2>Why Choose ZAYNAR?</h2>
+      <div class="story-grid">
+        <div class="story-card">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Fast Delivery</h3>
+          <p>Swift and secure shipping to your doorstep. We ensure your products arrive safely and on time, every time.</p>
+        </div>
+        <div class="story-card">
+          <i class="fa-solid fa-award"></i>
+          <h3>Warranty & Support</h3>
+          <p>Comprehensive warranty coverage and dedicated customer support to assist you whenever you need help.</p>
+        </div>
+        <div class="story-card">
+          <i class="fa-solid fa-lock"></i>
+          <h3>Secure Payments</h3>
+          <p>Multiple payment options including JazzCash, Easypaisa, and cash on delivery for your convenience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#watches">Watches</a>
+        <a href="index.html#clothes">Clothes</a>
+        <a href="faq.html">FAQ</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+      <p class="copyright">&copy; 2025 ZAYNAR. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+    // Mobile menu toggle
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburgerBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      mobileNav.classList.toggle('active');
+    });
+    // Close mobile menu when clicking a link
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+      });
+    });
+    // Load cart count from localStorage
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById('cart-item-count').textContent = totalItems;
+    };
+    updateCartCount();
+  </script>
+</body>
+</html>

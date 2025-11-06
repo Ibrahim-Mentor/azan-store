@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ - ZAYNAR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#new-arrivals">New</a></li>
+        <li><a href="#watches">Watches</a></li>
+        <li><a href="#clothes">Clothes</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="faq.html"> FAQ</li>
+      </ul>
+    <header>
+        <nav class="logo">
+            <img src="logo.jpg" alt="ZAYNAR logo">
+            <span style="font-size:1.8rem; font-weight:bold; color:#fff;">ZAYNAR</span>
+        </nav>
+    </header>
+    <main>
+        <section class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-category">
+                <h3>Payment</h3>
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods do you accept?</div>
+                    <div class="faq-answer">We accept JazzCash, Easypaisa, cash on delivery, and secure card payments.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is my payment information safe?</div>
+                    <div class="faq-answer">Yes, all payments are processed securely using industry-standard encryption.</div>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h3>Shipping</h3>
+                <div class="faq-item">
+                    <div class="faq-question">Where do you ship?</div>
+                    <div class="faq-answer">We ship nationwide across Pakistan using reliable courier partners.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How long does delivery take?</div>
+                    <div class="faq-answer">Delivery usually takes 2-5 working days, depending on your city.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I track my order?</div>
+                    <div class="faq-answer">Yes, after dispatch, a tracking link is sent to your WhatsApp or email.</div>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h3>Products & Authenticity</h3>
+                <div class="faq-item">
+                    <div class="faq-question">Are your products genuine?</div>
+                    <div class="faq-answer">Yes, all our watches, wallets, and accessories are 100% original and quality checked.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer product warranty?</div>
+                    <div class="faq-answer">Most items include a 1-year warranty. See individual item descriptions for warranty info.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you have gift wrapping?</div>
+                    <div class="faq-answer">Yes! Select gift wrapping during checkout for eligible items.</div>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h3>Returns & Refunds</h3>
+                <div class="faq-item">
+                    <div class="faq-question">Can I return or exchange items?</div>
+                    <div class="faq-answer">Yes! Returns are accepted within 7 days if items are unused and in original packaging.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I start a return or refund?</div>
+                    <div class="faq-answer">Contact us on WhatsApp or via the website contact form with your order details.</div>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h3>Customer Service</h3>
+                <div class="faq-item">
+                    <div class="faq-question">How can I contact support?</div>
+                    <div class="faq-answer">Contact us via WhatsApp (number on homepage), email, or our website 24/7.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you respond quickly?</div>
+                    <div class="faq-answer">We aim to reply within 1 hour during business times.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // FAQ section expand/collapse
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

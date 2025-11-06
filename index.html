@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZAYNAR</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">ZAYNAR</div>
+      
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#new-arrivals">New</a></li>
+        <li><a href="#watches">Watches</a></li>
+        <li><a href="#clothes">Clothes</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="faq.html"> FAQ</li>
+        <li><a href="about.html">About</a></li>
+
+      </ul>
+      
+      <div class="nav-icons">
+        <a href="#" aria-label="My Account"><i class="fa-regular fa-user"></i></a>
+        <a href="#" id="cart-btn" aria-label="Open Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cart-item-count">0</span>
+        </a>
+        <a href="#" id="hamburger-btn" aria-label="Open Menu"><i class="fa-solid fa-bars-staggered"></i></a>
+      </div>
+    </nav>
+    
+    <div id="mobile-nav" class="mobile-nav-menu">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#new-arrivals" class="mobile-link">New</a>
+        <a href="#watches" class="mobile-link">Watches</a>
+        <a href="#clothes" class="mobile-link">Clothes</a>
+        <a href="#categories" class="mobile-link">Categories</a>
+        <a href="#" class="mobile-link">My Account</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="slider" id="home">
+      <div class="slide active">
+        <img src="New img/golden chain watch.png" alt="Slide 1">
+        <div class="slide-content" data-animate>
+          <h2>Timeless Elegance</h2>
+          <p>Discover the new 2025 Watch Collection.</p>
+          <a href="#watches" class="btn btn-primary">Shop Watches</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="New img/wallet 3.png" alt="Slide 2">
+        <div class="slide-content">
+          <h2>Minimalist Style</h2>
+          <p>Curated apparel for the modern individual.</p>
+          <a href="#clothes" class="btn btn-primary">Shop Clothes</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="New img/black chain watch.jpg" alt="Slide 3">
+        <div class="slide-content">
+          <h2>Premium Accessories</h2>
+          <p>Caps, Wallets, and more to complete your look.</p>
+          <a href="#caps" class="btn btn-primary">Shop Accessories</a>
+        </div>
+      </div>
+      
+      <button class="slider-nav prev"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="slider-nav next"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="slider-dots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+      </div>
+    </section>
+
+    <section id="new-arrivals" class="featured-section">
+      <div class="featured-content" data-animate>
+        <h2>New Arrivals</h2>
+        <p>Experience the pinnacle of design with our latest collection. Crafted for the discerning eye.</p>
+        <a href="#clothes" class="btn btn-secondary">Explore Collection</a>
+      </div>
+      <div class="featured-image" data-animate>
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="New Arrivals">
+      </div>
+    </section>
+
+    <section class="categories" id="categories">
+      <h2 class="section-title" data-animate>Shop by Category</h2>
+      <div class="category-grid">
+        <a href="#watches" class="category-card" data-animate>
+          <img src="New img/golden steps white.jpg" alt="Watches">
+          <div class="category-name">Watches</div>
+        </a>
+        <a href="#clothes" class="category-card" data-animate data-delay="100">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Clothes">
+          <div class="category-name">Clothes</div>
+        </a>
+        <a href="#wallets" class="category-card" data-animate data-delay="200">
+          <img src="New img/wallet 2.png" alt="Wallets">
+          <div class="category-name">Wallets</div>
+        </a>
+        <a href="#caps" class="category-card" data-animate data-delay="300">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Caps">
+          <div class="category-name">Caps</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="watches" class="products-section">
+      <h2 class="section-title" data-animate>Watches</h2>
+      <div class="product-grid">
+        <div class="product-card" data-animate>
+          <div class="product-image">
+            <img src="New img/golden steps green.jpg" alt="Modern White Watch">
+            <button class="btn quick-add-btn add-to-cart-btn" data-product="Modern White Watch" data-price="250">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <h3>Modern White Watch</h3>
+          <span class="price">$250.00</span>
+        </div>
+        <div class="product-card" data-animate data-delay="100">
+          <div class="product-image">
+            <img src="New img/golden chain watch.png" height="100px" width="100px" alt="Black Royal Watch">
+            <button class="btn quick-add-btn add-to-cart-btn" data-product="Black Royal Watch" data-price="220">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <div class="product-card" data-animate data-delay="100">
+          <div class="product-image">
+            <img src="New img/golden steps blue.jpg"alt="Black Royal Watch">
+            <button class="btn quick-add-btn add-to-cart-btn" data-product="Black Royal Watch" data-price="220">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <h3>Black Royal Watch</h3>
+          <span class="price">$220.00</span>
+        </div>
+      </div>
+
+      <div class="product-card" data-animate data-delay="100">
+          <div class="product-image">
+            <img src="New img/black chain watch.jpg" alt="Black Royal Watch">
+            <button class="btn quick-add-btn add-to-cart-btn" data-product="Black Royal Watch" data-price="220">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <h3>Black Royal Watch</h3>
+          <span class="price">$220.00</span>
+        </div>
+      </div>
+
+      <div class="product-card" data-animate data-delay="100">
+          <div class="product-image">
+            <img src="New img/golden steps white.jpg" alt="White Royal Watch">
+            <button class="btn quick-add-btn add-to-cart-btn" data-product="Black Royal Watch" data-price="220">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <h3>Black Royal Watch</h3>
+          <span class="price">$220.00</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="clothes" class="products-section">
+      <h2 class="section-title" data-animate>Clothes</h2>
+      <div class="product-grid">
+        <div class="product-card" data-animate>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=500&q=80" alt="White Classic Shirt">
+            <button class="btn quick-add-btn add-to-cart-btn" data-product="White Classic Shirt" data-price="80">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <h3>White Classic Shirt</h3>
+          <span class="price">$80.00</span>
+        </div>
+        <div class="product-card" data-animate data-delay="100">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80" alt="Black Classic Tee">
+            <button class="btn quick-add-btn add-to-cart-btn" data-product="Black Classic Tee" data-price="49">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <h3>Black Classic Tee</h3>
+          <span class="price">$49.00</span>
+        </div>
+      </div>
+    </section>
+    
+    <section id="wallets" class="products-section">
+      <h2 class="section-title" data-animate>Wallets</h2>
+      <div class="product-grid">
+          <div class="product-card" data-animate>
+            <div class="product-image">
+              <img src="New img/wallet.png" alt="Leather Wallet">
+              <button class="btn quick-add-btn add-to-cart-btn" data-product="Leather Wallet" data-price="60">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <h3>Leather Wallet</h3>
+            <span class="price">$60.00</span>
+          </div>
+          <div class="product-card" data-animate data-delay="100">
+            <div class="product-image">
+              <img src="New img/wallet 2.png" alt="Slim Minimal Wallet">
+              <button class="btn quick-add-btn add-to-cart-btn" data-product="Slim Minimal Wallet" data-price="45">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <h3>Slim Minimal Wallet</h3>
+            <span class="price">$45.00</span>
+          </div>
+      </div>
+      <div class="product-card" data-animate data-delay="100">
+            <div class="product-image">
+              <img src="New img/wallet 3.png" alt="Leather Wallet Black">
+              <button class="btn quick-add-btn add-to-cart-btn" data-product="Leather Wallet Black" data-price="45">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <h3>Leather Wallet Black</h3>
+            <span class="price">$45.00</span>
+          </div>
+      </div>
+      <div class="product-card" data-animate data-delay="100">
+            <div class="product-image">
+              <img src="New img/wallet 1.png" alt="Premium Plastic Wallet Black">
+              <button class="btn quick-add-btn add-to-cart-btn" data-product="Premium Plastic Wallet Black" data-price="45">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <h3>Premium Plastic Wallet Black</h3>
+            <span class="price">$45.00</span>
+          </div>
+      </div>
+
+    </section>
+    
+    <section id="caps" class="products-section">
+        <h2 class="section-title" data-animate>Caps</h2>
+        <div class="product-grid">
+            <div class="product-card" data-animate>
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80" alt="Classic Black Cap">
+                <button class="btn quick-add-btn add-to-cart-btn" data-product="Classic Black Cap" data-price="35">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+              <h3>Classic Black Cap</h3>
+              <span class="price">$35.00</span>
+            </div>
+            <div class="product-card" data-animate data-delay="100">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="Modern White Cap">
+                <button class="btn quick-add-btn add-to-cart-btn" data-product="Modern White Cap" data-price="40">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+              <h3>Modern White Cap</h3>
+              <span class="price">$40.00</span>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <div id="cart-overlay"></div>
+  <aside id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button id="close-cart-btn" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="cart-list-container">
+      </div>
+    <div class="cart-footer">
+      <div class="subtotal-container">
+        <strong>Subtotal:</strong>
+        <span id="subtotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary checkout-btn">Go to Checkout</button>
+    </div>
+  </aside>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column" data-animate>
+        <h4>ZAYNAR</h4>
+        <p>Premium luxury products and fashion accessories. Minimalist elegance for the modern world.</p>
+      </div>
+      <div class="footer-column" data-animate data-delay="100">
+        <h4>Shop</h4>
+        <a href="#watches">Watches</a>
+        <a href="#clothes">Clothes</a>
+        <a href="#wallets">Wallets</a>
+        <a href="#caps">Caps</a>
+      </div>
+      <div class="footer-column" data-animate data-delay="200">
+        <h4>Support</h4>
+        <a href="#">Contact Us</a>
+        <a href="faq.html">FAQ</a>
+        <a href="#">Shipping & Returns</a>
+      </div>
+      <div class="footer-column" data-animate data-delay="300">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61578607029967" target="blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/agdkwg4/" target="blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@zaynar408" target="blank" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 ZAYNAR. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
