@@ -28,6 +28,7 @@
             text-align: left;
             margin-top: 0;
             margin-bottom: 2.5rem;
+            color: var(--accent-color);
         }
         .faq-category {
             margin-bottom: 2rem;
@@ -77,7 +78,7 @@
         }
         .faq-item.active .faq-question::after {
             content: '\f068'; /* Font Awesome Minus */
-            transform: rotate(180deg);
+            transform: rotate(0deg);
         }
     </style>
 </head>
@@ -89,12 +90,10 @@
         
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#new-arrivals">New</a></li>
-          <li><a href="index.html#watches">Watches</a></li>
-          <li><a href="index.html#clothes">Clothes</a></li>
-          <li><a href="index.html#categories">Categories</a></li>
-          <li><a href="faq.html" class="active">FAQ</a></li>
+          <li><a href="shop.html">Shop</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
         </ul>
         
         <div class="nav-icons">
@@ -109,18 +108,16 @@
       
       <div id="mobile-nav" class="mobile-nav-menu">
           <a href="index.html" class="mobile-link">Home</a>
-          <a href="index.html#new-arrivals" class="mobile-link">New</a>
-          <a href="index.html#watches" class="mobile-link">Watches</a>
-          <a href="index.html#clothes" class="mobile-link">Clothes</a>
-          <a href="index.html#categories" class="mobile-link">Categories</a>
-          <a href="faq.html" class="mobile-link">FAQ</a>
+          <a href="shop.html" class="mobile-link">Shop</a>
           <a href="about.html" class="mobile-link">About</a>
+          <a href="contact.html" class="mobile-link">Contact</a>
+          <a href="faq.html" class="mobile-link">FAQ</a>
           <a href="#" class="mobile-link">My Account</a>
       </div>
     </header>
 
     <main class="faq-page-content">
-        <section class="faq-section">
+        <section class="faq-section" data-animate>
             <h2 class="section-title">Frequently Asked Questions</h2>
             
             <div class="faq-category">
@@ -159,7 +156,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Do you offer product warranty?</div>
-                    <div class="faq-answer">Most items include a 1-year warranty. See individual item descriptions for warranty info.</div>
+                    <div class="faq-answer">Most items include a 1-year warranty on the watch movement. See individual item descriptions or our Shipping & Returns page for warranty info.</div>
                 </div>
             </div>
             
@@ -167,11 +164,11 @@
                 <h3>Returns & Refunds</h3>
                 <div class="faq-item">
                     <div class="faq-question">Can I return or exchange items?</div>
-                    <div class="faq-answer">Yes! Returns are accepted within 7 days if items are unused and in original packaging.</div>
+                    <div class="faq-answer">Yes! Returns are accepted within 7 days if items are unused and in original packaging. Please see our <a href="shipping-returns.html" style="color: var(--accent-color);">Shipping & Returns</a> page for full details.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">How do I start a return or refund?</div>
-                    <div class="faq-answer">Contact us on WhatsApp or via the website contact form with your order details.</div>
+                    <div class="faq-answer">Contact us on WhatsApp or via the <a href="contact.html" style="color: var(--accent-color);">contact form</a> with your order details.</div>
                 </div>
             </div>
 
@@ -203,16 +200,15 @@
         </div>
         <div class="footer-column">
           <h4>Shop</h4>
-          <a href="index.html#watches">Watches</a>
-          <a href="index.html#clothes">Clothes</a>
-          <a href="index.html#wallets">Wallets</a>
-          <a href="index.html#caps">Caps</a>
+          <a href="shop.html">All Products</a>
+          <a href="shop.html#watches">Watches</a>
+          <a href="shop.html#wallets">Wallets</a>
         </div>
         <div class="footer-column">
           <h4>Support</h4>
-          <a href="#">Contact Us</a>
+          <a href="contact.html">Contact Us</a>
           <a href="faq.html">FAQ</a>
-          <a href="#">Shipping & Returns</a>
+          <a href="shipping-returns.html">Shipping & Returns</a>
         </div>
         <div class="footer-column">
           <h4>Follow Us</h4>
