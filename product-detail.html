@@ -17,8 +17,9 @@
 
   <header>
     <nav class="navbar">
+      <a href="index.html">
       <div class="logo">ZAYNAR</div>
-      
+      </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="shop.html" class="active">Shop</a></li>
@@ -51,7 +52,7 @@
     <div class="product-detail-container">
         
         <div class="product-image-large" data-animate>
-            <img src="img/IMG-20251104-WA0025.jpg" alt="Patek Philippe Silver">
+            <img src="img/product 1.jpg" alt="Patek Philippe Silver">
         </div>
 
         <div class="product-info" data-animate>
@@ -129,6 +130,86 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+(function(){
+  const raw = sessionStorage.getItem('selectedProduct');
+  if (!raw) return; // agar koi nahi to default rahega
+
+  try {
+    const pd = JSON.parse(raw);
+    // Set main image
+    const imgContainer = document.querySelector('.product-image-large img');
+    if (imgContainer && pd.imgSrc) {
+      imgContainer.src = pd.imgSrc;
+      if (pd.imgAlt) imgContainer.alt = pd.imgAlt;
+    }
+    // Set title
+    const titleEl = document.querySelector('.product-info h1');
+    if (titleEl && pd.title) titleEl.innerText = pd.title;
+    // Set price
+    const priceEl = document.querySelector('.product-info .price-large');
+    if (priceEl && pd.priceText) priceEl.innerText = pd.priceText.replace('$','').trim().startsWith('$') ? pd.priceText : pd.priceText;
+    // If you want a numeric price for the add-to-cart button:
+    const priceNum = pd.priceText ? pd.priceText.replace(/[^0-9.]/g,'') : '';
+    const addBtn = document.querySelector('.add-to-cart-btn-large');
+    if (addBtn && priceNum) addBtn.setAttribute('data-price', priceNum);
+  } catch(e){
+    console.error('Error parsing selectedProduct', e);
+  }
+  // cleanup so back/forward won't reuse stale data
+  sessionStorage.removeItem('selectedProduct');
+})();
+</script>
+<script>
+  // Map of all products with their details
+  const products = {
+    'patek-silver': {
+      img: 'img/IMG-20251104-WA0025.jpg',
+      title: 'Patek Philippe Silver Watch',
+      price: '$450.00',
+      desc: 'An elegant silver Patek Philippe watch perfect for formal wear.'
+    },
+    'rado-skeleton': {
+      img: 'img/IMG-20251104-WA0016.jpg',
+      title: 'Rado Skeleton Dial Watch',
+      price: '$275.00',
+      desc: 'Skeleton dial with visible movement and modern design.'
+    },
+    'leather-brown-wallet': {
+      img: 'img/wallet-brown.jpg',
+      title: 'Leather Brown Wallet',
+      price: '$75.00',
+      desc: 'Classic brown leather wallet with smooth finish.'
+    },
+    'plastic-wallet': {
+      img: 'img/wallet-plastic.jpg',
+      title: 'Plastic Wallet',
+      price: '$25.00',
+      desc: 'Durable lightweight plastic wallet.'
+    }
+  };
+
+  // Get the product name from URL (e.g. ?product=patek-silver)
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('product');
+
+  // If product exists, replace the details
+  if (slug && products[slug]) {
+    const p = products[slug];
+    const img = document.querySelector('.product-image-large img');
+    const titleEl = document.querySelector('.product-info h1');
+    const priceEl = document.querySelector('.product-info .price-large');
+    const descEl = document.querySelector('.product-description');
+    const addBtn = document.querySelector('.add-to-cart-btn-large');
+
+    if (img) { img.src = p.img; img.alt = p.title; }
+    if (titleEl) titleEl.textContent = p.title;
+    if (priceEl) priceEl.textContent = p.price;
+    if (descEl) descEl.textContent = p.desc;
+    if (addBtn) addBtn.setAttribute('data-price', p.price.replace(/[^0-9.]/g, ''));
+  }
+</script>
+
 
 </body>
 </html>

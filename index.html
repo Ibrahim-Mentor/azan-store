@@ -12,13 +12,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/logo.jpg" />
 </head>
 <body>
 
   <header>
     <nav class="navbar">
+      <a href="index.html">
       <div class="logo">ZAYNAR</div>
-      
+      </a>
+      <!-- Loader HTML (place this at the start of your body) -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="shop.html">Shop</a></li>
@@ -28,7 +35,7 @@
       </ul>
       
       <div class="nav-icons">
-        <a href="#" aria-label="My Account"><i class="fa-regular fa-user"></i></a>
+        <a href="account.html" aria-label="My Account"><i class="fa-regular fa-user"></i></a>
         <a href="#" id="cart-btn" aria-label="Open Cart">
           <i class="fa-solid fa-bag-shopping"></i>
           <span id="cart-item-count">0</span>
@@ -112,45 +119,46 @@
         
         <div class="product-card" data-animate>
           <div class="product-image">
-            <a href="product-detail.html"><img src="img/IMG-20251104-WA0025.jpg" alt="Patek Philippe Silver"></a>
+            <a href="product-detail.html?product=1">
+           <img src="img/product 1.jpg" alt="Patek Philippe Silver"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Patek Philippe Silver" data-price="450">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Patek Philippe Silver</a></h3>
+          <h3><a href="product-detail.html?product=2">Patek Philippe Silver</a></h3>
           <span class="price">$450.00</span>
         </div>
         
         <div class="product-card" data-animate data-delay="100">
           <div class="product-image">
-            <a href="product-detail.html"><img src="img/IMG-20251104-WA0016.jpg" alt="Rado Skeleton Dial"></a>
+            <a href="product-detail.html?product=3"><img src="img/IMG-20251104-WA0016.jpg" alt="Rado Skeleton Dial"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Rado Skeleton Dial" data-price="275">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Rado Skeleton Dial</a></h3>
+          <h3><a href="product-detail.html?product=4">Rado Skeleton Dial</a></h3>
           <span class="price">$275.00</span>
         </div>
 
         <div class="product-card" data-animate data-delay="200">
           <div class="product-image">
-            <a href="product-detail.html"><img src="img/IMG-20251101-WA0001.jpg" alt="Rolex Land-Dweller Green"></a>
+            <a href="product-detail.html?product=patek-silver"><img src="img/product 3.jpg" alt="Rolex Land-Dweller Green"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Rolex Land-Dweller Green" data-price="250">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Rolex Land-Dweller Green</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">Rolex Land-Dweller Green</a></h3>
           <span class="price">$250.00</span>
         </div>
 
         <div class="product-card" data-animate data-delay="300">
           <div class="product-image">
-            <a href="product-detail.html"><img src="img/IMG-20251029-WA0013.jpg" alt="Chenxi Chronograph"></a>
+            <a href="product-detail.html?product=patek-silver"><img src="img/IMG-20251029-WA0013.jpg" alt="Chenxi Chronograph"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Chenxi Chronograph" data-price="130">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Chenxi Chronograph</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">Chenxi Chronograph</a></h3>
           <span class="price">$130.00</span>
         </div>
       </div>
@@ -215,89 +223,104 @@
         
         <div class="product-card" data-animate>
           <div class="product-image">
-            <a href="product-detail.html"><img src="New img/golden steps green.jpg" alt="Bestwin Gold Green"></a>
+            <a href="product-detail.html?product=patek-silver"><img src="New img/golden steps green.jpg" alt="Bestwin Gold Green"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Bestwin Gold Green" data-price="150">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Bestwin Gold Green</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">
+          Bestwin Gold Green</a></h3>
           <span class="price">$150.00</span>
         </div>
         
         <div class="product-card" data-animate data-delay="100">
           <div class="product-image">
-            <a href="product-detail.html"><img src="New img/golden chain watch.png" alt="Tissot Chronograph Gold"></a>
+            <a href="product-detail.html?product=patek-silver">
+             <img src="New img/golden chain watch.png" alt="Tissot Chronograph Gold"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Tissot Chronograph Gold" data-price="220">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Tissot Chronograph Gold</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">
+             Tissot Chronograph Gold</a></h3>
           <span class="price">$220.00</span>
         </div>
 
         <div class="product-card" data-animate data-delay="200">
           <div class="product-image">
-            <a href="product-detail.html"><img src="New img/golden steps blue.jpg" alt="Bestwin Gold Blue"></a>
+            <a href="product-detail.html?product=patek-silver">
+            <img src="New img/golden steps blue.jpg" alt="Bestwin Gold Blue"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Bestwin Gold Blue" data-price="150">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Bestwin Gold Blue</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">
+          Bestwin Gold Blue</a></h3>
           <span class="price">$150.00</span>
         </div>
 
         <div class="product-card" data-animate data-delay="300">
           <div class="product-image">
-            <a href="product-detail.html"><img src="New img/black chain watch.jpg" alt="Tissot Chronograph Black"></a>
+            <a href="product-detail.html?product=patek-silver">
+           <img src="New img/black chain watch.jpg" alt="Tissot Chronograph Black"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Tissot Chronograph Black" data-price="200">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Tissot Chronograph Black</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">
+            Tissot Chronograph Black</a></h3>
           <span class="price">$200.00</span>
         </div>
         
         <div class="product-card" data-animate>
           <div class="product-image">
-            <a href="product-detail.html"><img src="img/IMG-20251102-WA0006.jpg" alt="Tissot PRX Two-Tone Blue"></a>
+            <a href="product-detail.html?product=patek-silver">
+            <img src="img/IMG-20251102-WA0006.jpg" alt="Tissot PRX Two-Tone Blue"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Tissot PRX Two-Tone Blue" data-price="180">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Tissot PRX Two-Tone Blue</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">
+           Tissot PRX Two-Tone Blue</a></h3>
           <span class="price">$180.00</span>
         </div>
 
         <div class="product-card" data-animate data-delay="100">
           <div class="product-image">
-            <a href="product-detail.html"><img src="img/IMG-20251105-WA0007.jpg" alt="Seiko Two-Tone Blue"></a>
+            <a href="product-detail.html?product=patek-silver">
+            <img src="img/IMG-20251105-WA0007.jpg" alt="Seiko Two-Tone Blue"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Seiko Two-Tone Blue" data-price="190">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Seiko Two-Tone Blue</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">
+            Seiko Two-Tone Blue</a></h3>
           <span class="price">$190.00</span>
         </div>
 
         <div class="product-card" data-animate data-delay="200">
           <div class="product-image">
-            <a href="product-detail.html"><img src="img/IMG-20251103-WA0034.jpg" alt="Rolex Crown Red Dial"></a>
+            <a href="product-detail.html?product=patek-silver">
+             <img src="img/IMG-20251103-WA0034.jpg" alt="Rolex Crown Red Dial"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Rolex Crown Red Dial" data-price="230">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Rolex Crown Red Dial</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">
+          Rolex Crown Red Dial</a></h3>
           <span class="price">$230.00</span>
         </div>
 
         <div class="product-card" data-animate data-delay="300">
           <div class="product-image">
-            <a href="product-detail.html"><img src="img/IMG-20251104-WA0017.jpg" alt="Rado True White Dial"></a>
+            <a href="product-detail.html?product=patek-silver">
+             <img src="img/IMG-20251104-WA0017.jpg" alt="Rado True White Dial"></a>
             <button class="btn quick-add-btn add-to-cart-btn" data-product="Rado True White Dial" data-price="210">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
-          <h3><a href="product-detail.html">Rado True White Dial</a></h3>
+          <h3><a href="product-detail.html?product=patek-silver">
+             Rado True White Dial</a></h3>
           <span class="price">$210.00</span>
         </div>
       </div>
@@ -309,45 +332,53 @@
           
           <div class="product-card" data-animate>
             <div class="product-image">
-              <a href="product-detail.html"><img src="New img/wallet.png" alt="Classic Black Wallet"></a>
+             <a href="product-detail.html?product=patek-silver">
+            <img src="New img/wallet.png" alt="Classic Black Wallet"></a>
               <button class="btn quick-add-btn add-to-cart-btn" data-product="Classic Black Wallet" data-price="60">
                 <i class="fa-solid fa-plus"></i>
               </button>
             </div>
-            <h3><a href="product-detail.html">Classic Black Wallet</a></h3>
+            <h3><a href="product-detail.html?product=patek-silver">
+               Classic Black Wallet</a></h3>
             <span class="price">$60.00</span>
           </div>
           
           <div class="product-card" data-animate data-delay="100">
             <div class="product-image">
-              <a href="product-detail.html"><img src="New img/wallet 2.png" alt="Dark Brown Leather Wallet"></a>
+              <a href="product-detail.html?product=patek-silver">
+                 <img src="New img/wallet 2.png" alt="Dark Brown Leather Wallet"></a>
               <button class="btn quick-add-btn add-to-cart-btn" data-product="Dark Brown Leather Wallet" data-price="45">
                 <i class="fa-solid fa-plus"></i>
               </button>
             </div>
-            <h3><a href="product-detail.html">Dark Brown Leather Wallet</a></h3>
+            <h3><a href="product-detail.html?product=patek-silver">
+              Dark Brown Leather Wallet</a></h3>
             <span class="price">$45.00</span>
           </div>
 
           <div class="product-card" data-animate data-delay="200">
             <div class="product-image">
-              <a href="product-detail.html"><img src="New img/wallet 3.png" alt="Tan Leather Wallet"></a>
+              <a href="product-detail.html?product=patek-silver">
+              <img src="New img/wallet 3.png" alt="Tan Leather Wallet"></a>
               <button class="btn quick-add-btn add-to-cart-btn" data-product="Tan Leather Wallet" data-price="45">
                 <i class="fa-solid fa-plus"></i>
               </button>
             </div>
-            <h3><a href="product-detail.html">Tan Leather Wallet</a></h3>
+            <h3><a href="product-detail.html?product=patek-silver">
+            Tan Leather Wallet</a></h3>
             <span class="price">$45.00</span>
           </div>
           
           <div class="product-card" data-animate data-delay="300">
             <div class="product-image">
-              <a href="product-detail.html"><img src="New img/wallet 1.png" alt="Minimalist Black Wallet"></a>
+              <a href="product-detail.html?product=patek-silver">
+              <img src="New img/wallet 1.png" alt="Minimalist Black Wallet"></a>
               <button class="btn quick-add-btn add-to-cart-btn" data-product="Minimalist Black Wallet" data-price="45">
                 <i class="fa-solid fa-plus"></i>
               </button>
             </div>
-            <h3><a href="product-detail.html">Minimalist Black Wallet</a></h3>
+            <h3><a href="product-detail.html?product=patek-silver">
+               Minimalist Black Wallet</a></h3>
             <span class="price">$45.00</span>
           </div>
       </div>
@@ -371,7 +402,6 @@
       <button class="btn btn-primary checkout-btn">Go to Checkout</button>
     </div>
   </aside>
-
   <footer>
     <div class="footer-container">
       <div class="footer-column" data-animate>
@@ -405,6 +435,29 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+// Find all links that point to product-detail.html and save the clicked product info to sessionStorage
+document.querySelectorAll('a[href="product-detail.html"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    // find the <img> inside the link
+    const img = a.querySelector('img');
+    // find product name and price from nearby DOM (assumes structure in your index.html)
+    const card = a.closest('.product-card');
+    const titleElem = card ? card.querySelector('h3') : null;
+    const priceElem = card ? card.querySelector('.price') : null;
+
+    const data = {
+      imgSrc: img ? img.getAttribute('src') : '',
+      imgAlt: img ? img.getAttribute('alt') : '',
+      title: titleElem ? titleElem.innerText.trim() : '',
+      priceText: priceElem ? priceElem.innerText.trim() : ''
+    };
+    sessionStorage.setItem('selectedProduct', JSON.stringify(data));
+    // allow normal navigation
+  });
+});
+</script>
+
 
 </body>
 </html>

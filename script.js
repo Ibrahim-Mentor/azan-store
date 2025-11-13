@@ -280,3 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCart();
 
 });
+// Loader hide logic (add after your content loads, e.g., at bottom of body)
+window.addEventListener('load', function() {
+  document.getElementById('loader').style.display = 'none';
+});
