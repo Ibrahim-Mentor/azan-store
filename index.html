@@ -3,23 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAYNAR | Redefining Time</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <title>ZAYNAR | Timeless Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo.jpg" />
 </head>
 <body>
-    
-    <div id="page-loader">
-        <div class="loader-logo">ZAYNAR</div>
-        <div class="loader-progress"></div>
-    </div>
 
     <header id="main-header">
         <div class="header-inner">
@@ -27,198 +17,159 @@
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="shop.html" class="nav-link">Collection</a>
                 <a href="about.html" class="nav-link">Legacy</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
-            
             <a href="index.html" class="brand-logo">ZAYNAR</a>
-            
             <div class="header-actions">
-                <a href="contact.html" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
+                <button id="theme-btn" class="icon-link"><i class="fa-solid fa-sun"></i></button>
                 <a href="account.html" class="icon-link"><i class="fa-regular fa-user"></i></a>
-                <button id="cart-toggle" class="icon-link">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span id="cart-count">0</span>
-                </button>
-                <button id="menu-toggle" class="icon-link mobile-only"><i class="fa-solid fa-bars"></i></button>
+                <button id="cart-trigger" class="icon-link"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
+                <button id="menu-trigger" class="icon-link mobile-only"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
 
     <div id="mobile-menu">
-        <div class="menu-content">
+        <div class="mm-links">
             <a href="index.html">Home</a>
-            <a href="shop.html">Collection</a>
-            <a href="about.html">Legacy</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="account.html">Account</a>
         </div>
     </div>
 
-    <section class="hero-section">
-        <div class="hero-bg">
-            <img src="img/a3.jpg" alt="Luxury Timepiece">
-            <div class="overlay"></div>
-        </div>
+    <section class="hero-fullscreen">
+        <div class="hero-bg"><img src="img/a3.jpg" alt="Luxury Watch"><div class="hero-overlay"></div></div>
         <div class="hero-content">
             <span class="eyebrow fade-up">The 2025 Collection</span>
-            <h1 class="fade-up delay-1">Eternal <br> Elegance</h1>
-            <p class="fade-up delay-2">Crafted for those who value every second.</p>
-            <div class="hero-btns fade-up delay-3">
-                <a href="shop.html" class="btn primary-btn">Explore Collection</a>
+            <h1 class="hero-title fade-up delay-1">Precision in <br> Every Second</h1>
+            <p class="hero-desc fade-up delay-2">Discover timepieces that define status and elegance.</p>
+            <div class="fade-up delay-3">
+                <a href="shop.html" class="btn btn-primary">View Collection</a>
+                <a href="about.html" class="btn btn-secondary" style="margin-left: 20px;">Our Story</a>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="line"></div>
         </div>
     </section>
 
-    <div class="marquee-strip">
-        <div class="marquee-content">
-            <span>Swiss Precision</span> &bull; <span>Genuine Leather</span> &bull; <span>Lifetime Warranty</span> &bull; <span>Global Shipping</span> &bull; 
-            <span>Swiss Precision</span> &bull; <span>Genuine Leather</span> &bull; <span>Lifetime Warranty</span> &bull; <span>Global Shipping</span> &bull;
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>SWISS MOVEMENT</span> &bull; <span>SAPPHIRE CRYSTAL</span> &bull; <span>LIFETIME WARRANTY</span> &bull; <span>HANDCRAFTED</span> &bull; 
+            <span>SWISS MOVEMENT</span> &bull; <span>SAPPHIRE CRYSTAL</span> &bull; <span>LIFETIME WARRANTY</span> &bull; <span>HANDCRAFTED</span> &bull;
         </div>
     </div>
 
     <main>
-        <section class="curated-section">
-            <div class="section-header text-center">
-                <span class="sub-title">Masterpieces</span>
-                <h2>Curated Selection</h2>
+        <section class="section-spacing container">
+            <div class="section-header fade-up">
+                <span class="eyebrow" style="color:var(--accent-gold);">Curated Selection</span>
+                <h2>Best Sellers</h2>
                 <div class="divider"></div>
             </div>
-
-            <div class="product-grid" id="featured-grid">
+            <div class="product-grid">
                 <div class="product-card scroll-reveal">
-                    <div class="card-image">
-                        <span class="badge">Best Seller</span>
-                        <img src="img/product 1.jpg" alt="Patek Silver">
-                        <div class="card-overlay">
-                            <button class="btn-icon add-to-cart" data-id="patek-silver"><i class="fa-solid fa-plus"></i></button>
-                            <a href="product-detail.html?product=patek-silver" class="btn-icon"><i class="fa-solid fa-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3><a href="product-detail.html?product=patek-silver">Patek Philippe Nautilus</a></h3>
-                        <span class="price">$450.00</span>
-                    </div>
+                    <div class="card-img"><img src="img/product 1.jpg"><div class="card-overlay"><button class="icon-btn add-to-cart" data-id="patek-silver"><i class="fa-solid fa-plus"></i></button></div></div>
+                    <div class="card-info"><h3>Patek Philippe Silver</h3><div class="price">$450.00</div></div>
                 </div>
-
                 <div class="product-card scroll-reveal delay-1">
-                    <div class="card-image">
-                        <img src="img/IMG-20251104-WA0016.jpg" alt="Rado Skeleton">
-                        <div class="card-overlay">
-                            <button class="btn-icon add-to-cart" data-id="rado-skeleton"><i class="fa-solid fa-plus"></i></button>
-                            <a href="product-detail.html?product=rado-skeleton" class="btn-icon"><i class="fa-solid fa-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3><a href="product-detail.html?product=rado-skeleton">Rado True Square</a></h3>
-                        <span class="price">$275.00</span>
-                    </div>
+                    <div class="card-img"><img src="img/IMG-20251104-WA0016.jpg"><div class="card-overlay"><button class="icon-btn add-to-cart" data-id="rado-skeleton"><i class="fa-solid fa-plus"></i></button></div></div>
+                    <div class="card-info"><h3>Rado Skeleton</h3><div class="price">$275.00</div></div>
                 </div>
-
                 <div class="product-card scroll-reveal delay-2">
-                    <div class="card-image">
-                        <img src="img/product 3.jpg" alt="Rolex Green">
-                        <div class="card-overlay">
-                            <button class="btn-icon add-to-cart" data-id="rolex-green"><i class="fa-solid fa-plus"></i></button>
-                            <a href="product-detail.html?product=rolex-green" class="btn-icon"><i class="fa-solid fa-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3><a href="product-detail.html?product=rolex-green">Rolex Land-Dweller</a></h3>
-                        <span class="price">$250.00</span>
-                    </div>
+                    <div class="card-img"><img src="img/product 3.jpg"><div class="card-overlay"><button class="icon-btn add-to-cart" data-id="rolex-green"><i class="fa-solid fa-plus"></i></button></div></div>
+                    <div class="card-info"><h3>Rolex Land-Dweller</h3><div class="price">$250.00</div></div>
                 </div>
-            </div>
-
-            <div class="center-btn mt-5">
-                <a href="shop.html" class="btn secondary-btn">View All Products</a>
             </div>
         </section>
 
-        <section class="editorial-section">
-            <div class="editorial-img scroll-reveal">
-                <img src="img/a4.jpg" alt="Luxury Lifestyle">
-            </div>
-            <div class="editorial-text scroll-reveal">
-                <span class="sub-title">The Legacy</span>
-                <h2>Designed for <br> Distinction</h2>
-                <p>ZAYNAR isn't just about telling time; it's about defining moments. Our 2025 collection merges avant-garde aesthetics with traditional craftsmanship.</p>
-                <a href="about.html" class="text-link">Read Our Story <i class="fa-solid fa-arrow-right"></i></a>
+        <section class="section-spacing" style="background: var(--bg-panel);">
+            <div class="container text-center">
+                <div class="section-header fade-up"><h2>Why ZAYNAR?</h2></div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px;">
+                    <div class="scroll-reveal">
+                        <i class="fa-solid fa-medal" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 20px;"></i>
+                        <h3>Authenticity</h3>
+                        <p>100% Genuine products with verification certificates.</p>
+                    </div>
+                    <div class="scroll-reveal delay-1">
+                        <i class="fa-solid fa-truck-fast" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 20px;"></i>
+                        <h3>Global Shipping</h3>
+                        <p>Secure, insured delivery to your doorstep worldwide.</p>
+                    </div>
+                    <div class="scroll-reveal delay-2">
+                        <i class="fa-solid fa-shield-halved" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 20px;"></i>
+                        <h3>Warranty</h3>
+                        <p>Comprehensive 1-year warranty on all movements.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="categories-section">
-            <a href="shop.html" class="category-card scroll-reveal">
-                <img src="img/IMG-20251029-WA0002.jpg" alt="Watches">
-                <div class="cat-content">
-                    <h3>Timepieces</h3>
-                    <span>Shop Now</span>
+        <section style="height: 500px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="img/a4.jpg" style="position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+            <div class="container text-center" style="position: relative; z-index: 2;">
+                <h2 class="fade-up" style="font-size: 3rem; margin-bottom: 20px;">The Midnight Series</h2>
+                <a href="shop.html" class="btn btn-primary fade-up delay-1">Discover Now</a>
+            </div>
+        </section>
+
+        <section class="section-spacing container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div class="scroll-reveal" style="position: relative; height: 400px; overflow: hidden;">
+                    <img src="img/IMG-20251029-WA0002.jpg" style="height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 30px; left: 30px;">
+                        <h3>Watches</h3>
+                        <a href="shop.html" style="color: var(--accent-gold); border-bottom: 1px solid;">Shop Now</a>
+                    </div>
                 </div>
-            </a>
-            <a href="shop.html" class="category-card scroll-reveal delay-1">
-                <img src="New img/wallet 3.png" alt="Wallets">
-                <div class="cat-content">
-                    <h3>Leather Goods</h3>
-                    <span>Shop Now</span>
+                <div class="scroll-reveal delay-1" style="position: relative; height: 400px; overflow: hidden;">
+                    <img src="New img/wallet 3.png" style="height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 30px; left: 30px;">
+                        <h3>Accessories</h3>
+                        <a href="shop.html" style="color: var(--accent-gold); border-bottom: 1px solid;">Shop Now</a>
+                    </div>
                 </div>
-            </a>
+            </div>
+        </section>
+
+        <section class="section-spacing" style="background: var(--bg-panel);">
+            <div class="container text-center">
+                <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: var(--accent-gold);"></i>
+                <h3 class="scroll-reveal" style="font-size: 2rem; margin: 30px 0; max-width: 800px; margin-left: auto; margin-right: auto;">"The quality of the timepiece exceeded my expectations. ZAYNAR is truly the definition of affordable luxury."</h3>
+                <p class="scroll-reveal delay-1">- Jonathan D., Verified Buyer</p>
+            </div>
+        </section>
+
+        <section class="section-spacing inner-circle">
+            <div class="container text-center">
+                <span class="eyebrow">Exclusive Access</span>
+                <h2>Join the Inner Circle</h2>
+                <p>Subscribe for early access to new drops and private sales.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+            </div>
         </section>
     </main>
 
     <div id="cart-drawer">
-        <div class="cart-header">
-            <h3>Shopping Bag</h3>
-            <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div id="cart-items">
-            <div class="empty-cart-msg">Your bag is empty.</div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total</span>
-                <span id="cart-total-price">$0.00</span>
-            </div>
-            <a href="checkout.html" class="btn primary-btn full-width">Checkout</a>
+        <div class="drawer-header"><h3>Shopping Bag</h3><button id="close-drawer"><i class="fa-solid fa-xmark"></i></button></div>
+        <div id="cart-items" class="drawer-content"></div>
+        <div class="drawer-footer">
+            <div style="display:flex; justify-content:space-between; margin-bottom:20px;"><span>Total</span><span id="cart-total">$0.00</span></div>
+            <a href="checkout.html" class="btn btn-primary" style="width:100%; display:block; text-align:center;">Checkout</a>
         </div>
     </div>
     <div id="overlay"></div>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">ZAYNAR</div>
-                <p>Elevating style through precision and luxury.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Shop</h4>
-                <a href="shop.html">All Products</a>
-                <a href="shop.html">New Arrivals</a>
-                <a href="track-order.html">Track Order</a>
-            </div>
-            <div class="footer-links">
-                <h4>Support</h4>
-                <a href="contact.html">Contact Us</a>
-                <a href="shipping-returns.html">Shipping & Returns</a>
-                <a href="faq.html">FAQ</a>
-            </div>
-            <div class="footer-newsletter">
-                <h4>Stay Connected</h4>
-                <form>
-                    <input type="email" placeholder="Email Address">
-                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
-                </form>
-                <div class="socials">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
+        <div class="container footer-grid">
+            <div><div class="brand-logo">ZAYNAR</div><p>Timeless elegance for the modern era.</p></div>
+            <div class="footer-links"><h4>Shop</h4><a href="shop.html">Watches</a><a href="shop.html">Wallets</a></div>
+            <div class="footer-links"><h4>Support</h4><a href="contact.html">Contact</a><a href="faq.html">FAQ</a><a href="track-order.html">Track Order</a></div>
+            <div class="footer-links"><h4>Social</h4><a href="#">Instagram</a><a href="#">Facebook</a></div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 ZAYNAR. All Rights Reserved.</p>
-        </div>
+        <div class="footer-bottom">&copy; 2025 ZAYNAR. All Rights Reserved.</div>
     </footer>
 
     <script src="script.js"></script>

@@ -4,160 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection | ZAYNAR</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo.jpg" />
 </head>
 <body>
     
-    <div id="page-loader">
-        <div class="loader-logo">ZAYNAR</div>
-        <div class="loader-progress"></div>
-    </div>
-
     <header id="main-header">
         <div class="header-inner">
             <nav class="desktop-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="shop.html" class="nav-link active">Collection</a>
                 <a href="about.html" class="nav-link">Legacy</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
-            
             <a href="index.html" class="brand-logo">ZAYNAR</a>
-            
             <div class="header-actions">
-                <a href="contact.html" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
+                <button id="theme-btn" class="icon-link"><i class="fa-solid fa-sun"></i></button>
                 <a href="account.html" class="icon-link"><i class="fa-regular fa-user"></i></a>
-                <button id="cart-toggle" class="icon-link">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span id="cart-count">0</span>
-                </button>
-                <button id="menu-toggle" class="icon-link mobile-only"><i class="fa-solid fa-bars"></i></button>
+                <button id="cart-trigger" class="icon-link"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
+                <button id="menu-trigger" class="icon-link mobile-only"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
-
-    <div id="mobile-menu">
-        <div class="menu-content">
-            <a href="index.html">Home</a>
-            <a href="shop.html">Collection</a>
-            <a href="about.html">Legacy</a>
-            <a href="contact.html">Contact</a>
-            <a href="account.html">Account</a>
-        </div>
-    </div>
+    <div id="mobile-menu"><div class="mm-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
 
     <main>
-        <section class="hero-section" style="height: 40vh; min-height: 300px;">
-            <div class="hero-bg">
-                <img src="img/IMG-20251029-WA0003.jpg" alt="Shop Header">
-                <div class="overlay"></div>
-            </div>
-            <div class="hero-content" style="text-align: center; width: 100%; max-width: 100%;">
+        <section style="height: 40vh; min-height: 300px; position: relative; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="hero-bg"><img src="img/IMG-20251029-WA0003.jpg"><div class="hero-overlay"></div></div>
+            <div class="hero-content">
                 <h1 class="fade-up">The Collection</h1>
                 <p class="fade-up delay-1">Curated for the discerning individual.</p>
             </div>
         </section>
 
-        <section class="curated-section">
-            <div class="shop-controls fade-up delay-2" style="text-align: center; margin-bottom: 50px;">
-                <button class="btn secondary-btn" onclick="renderShopPage('all')">All</button>
-                <button class="btn secondary-btn" onclick="renderShopPage('watches')">Timepieces</button>
-                <button class="btn secondary-btn" onclick="renderShopPage('wallets')">Leather Goods</button>
+        <section class="container text-center" style="margin-top: 60px;">
+            <div class="fade-up">
+                <button class="btn btn-secondary" onclick="renderGrid('all')">All</button>
+                <button class="btn btn-secondary" onclick="renderGrid('watches')">Timepieces</button>
+                <button class="btn btn-secondary" onclick="renderGrid('wallets')">Leather</button>
             </div>
+        </section>
 
-            <div class="product-grid" id="shop-grid">
+        <section class="container section-spacing">
+            <h3 class="text-center fade-up" style="margin-bottom: 40px;">New Arrivals</h3>
+            <div class="product-grid">
+                <div class="product-card scroll-reveal">
+                    <div class="card-img"><img src="img/product 1.jpg"><div class="card-overlay"><button class="icon-btn add-to-cart" data-id="patek-silver"><i class="fa-solid fa-plus"></i></button></div></div>
+                    <div class="card-info"><h3>Patek Philippe</h3><div class="price">$450.00</div></div>
                 </div>
+                <div class="product-card scroll-reveal delay-1">
+                    <div class="card-img"><img src="img/IMG-20251105-WA0005.jpg"><div class="card-overlay"><button class="icon-btn add-to-cart" data-id="seiko-green"><i class="fa-solid fa-plus"></i></button></div></div>
+                    <div class="card-info"><h3>Seiko Presage</h3><div class="price">$180.00</div></div>
+                </div>
+                <div class="product-card scroll-reveal delay-2">
+                    <div class="card-img"><img src="New img/wallet 1.png"><div class="card-overlay"><button class="icon-btn add-to-cart" data-id="wallet-black"><i class="fa-solid fa-plus"></i></button></div></div>
+                    <div class="card-info"><h3>Noir Wallet</h3><div class="price">$60.00</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section-spacing" style="padding-top: 0;">
+            <div class="section-header fade-up"><h2>Full Catalogue</h2><div class="divider"></div></div>
+            <div id="shop-grid" class="product-grid">
+                </div>
+        </section>
+
+        <section style="background: var(--bg-panel); padding: 80px 0; text-align: center;">
+            <div class="container">
+                <span class="eyebrow scroll-reveal">Limited Time</span>
+                <h2 class="scroll-reveal delay-1">Purchase any watch, get 20% off a wallet</h2>
+                <a href="#" class="btn btn-primary scroll-reveal delay-2" style="margin-top: 30px;">Shop Bundles</a>
+            </div>
+        </section>
+
+        <section class="section-spacing container">
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; text-align: center;">
+                <div class="scroll-reveal">
+                    <i class="fa-solid fa-box-open" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
+                    <h4>Premium Packaging</h4>
+                </div>
+                <div class="scroll-reveal delay-1">
+                    <i class="fa-solid fa-clock-rotate-left" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
+                    <h4>7-Day Returns</h4>
+                </div>
+                <div class="scroll-reveal delay-2">
+                    <i class="fa-solid fa-lock" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
+                    <h4>Secure Checkout</h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-spacing inner-circle">
+            <div class="container text-center">
+                <span class="eyebrow">Exclusive Access</span>
+                <h2>Join the Inner Circle</h2>
+                <form class="newsletter-form"><input type="email" placeholder="Email"><button type="submit"><i class="fa-solid fa-arrow-right"></i></button></form>
+            </div>
         </section>
     </main>
 
-    <div id="cart-drawer">
-        <div class="cart-header">
-            <h3>Shopping Bag</h3>
-            <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div id="cart-items"></div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total</span>
-                <span id="cart-total-price">$0.00</span>
-            </div>
-            <a href="checkout.html" class="btn primary-btn full-width">Checkout</a>
-        </div>
-    </div>
+    <div id="cart-drawer"><div class="drawer-header"><h3>Shopping Bag</h3><button id="close-drawer"><i class="fa-solid fa-xmark"></i></button></div><div id="cart-items" class="drawer-content"></div><div class="drawer-footer"><div style="display:flex; justify-content:space-between;"><span>Total</span><span id="cart-total">$0.00</span></div><a href="checkout.html" class="btn btn-primary" style="width:100%; display:block; text-align:center; margin-top:20px;">Checkout</a></div></div>
     <div id="overlay"></div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">ZAYNAR</div>
-                <p>Elevating style through precision and luxury.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Shop</h4>
-                <a href="shop.html">All Products</a>
-                <a href="track-order.html">Track Order</a>
-            </div>
-            <div class="footer-links">
-                <h4>Support</h4>
-                <a href="contact.html">Contact Us</a>
-                <a href="faq.html">FAQ</a>
-                <a href="shipping-returns.html">Shipping & Returns</a>
-            </div>
-            <div class="footer-newsletter">
-                <h4>Stay Connected</h4>
-                <div class="socials">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom"><p>&copy; 2025 ZAYNAR. All Rights Reserved.</p></div>
-    </footer>
+    <footer><div class="container footer-grid"><div><div class="brand-logo">ZAYNAR</div><p>Timeless elegance.</p></div><div class="footer-links"><h4>Shop</h4><a href="shop.html">All</a><a href="track-order.html">Track</a></div><div class="footer-links"><h4>Support</h4><a href="contact.html">Contact</a><a href="faq.html">FAQ</a></div><div class="footer-links"><h4>Social</h4><a href="#">Insta</a></div></div><div class="footer-bottom">&copy; 2025 ZAYNAR.</div></footer>
 
     <script src="script.js"></script>
     <script>
-        // Inline script to render products for the shop page
-        document.addEventListener('DOMContentLoaded', () => {
-            // Assuming 'products' object exists in script.js. 
-            // We convert it to an array for easier rendering.
-            const productList = Object.keys(products).map(key => ({ id: key, ...products[key] }));
-            const grid = document.getElementById('shop-grid');
-            
-            window.renderShopPage = (category) => {
-                grid.innerHTML = '';
-                let filtered = productList;
-                
-                // Simple category logic based on name or a new category property
-                if(category === 'watches') filtered = productList.filter(p => p.name.toLowerCase().includes('watch') || p.name.includes('Time') || p.name.includes('Chronograph') || p.name.includes('Patek') || p.name.includes('Rolex') || p.name.includes('Rado'));
-                if(category === 'wallets') filtered = productList.filter(p => p.name.toLowerCase().includes('wallet'));
-
-                filtered.forEach(p => {
-                    grid.innerHTML += `
-                        <div class="product-card scroll-reveal visible">
-                            <div class="card-image">
-                                <img src="${p.img}" alt="${p.name}">
-                                <div class="card-overlay">
-                                    <button class="btn-icon add-to-cart" data-id="${p.id}"><i class="fa-solid fa-plus"></i></button>
-                                    <a href="product-detail.html?product=${p.id}" class="btn-icon"><i class="fa-solid fa-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="card-info">
-                                <h3><a href="product-detail.html?product=${p.id}">${p.name}</a></h3>
-                                <span class="price">$${p.price}</span>
-                            </div>
-                        </div>
-                    `;
-                });
-            };
-            
-            renderShopPage('all'); // Init
-        });
+        function renderGrid(cat) {
+            const g = document.getElementById('shop-grid');
+            g.innerHTML = '';
+            const all = Object.entries(products);
+            const filtered = cat === 'all' ? all : all.filter(([k, p]) => {
+                if(cat === 'watches') return p.name.toLowerCase().includes('watch') || !p.name.toLowerCase().includes('wallet');
+                if(cat === 'wallets') return p.name.toLowerCase().includes('wallet');
+            });
+            filtered.forEach(([k, p]) => {
+                g.innerHTML += `<div class="product-card scroll-reveal"><div class="card-img"><img src="${p.img}"><div class="card-overlay"><button class="icon-btn add-to-cart" data-id="${k}"><i class="fa-solid fa-plus"></i></button><a href="product-detail.html?product=${k}" class="icon-btn"><i class="fa-solid fa-eye"></i></a></div></div><div class="card-info"><h3>${p.name}</h3><div class="price">$${p.price}</div></div></div>`;
+            });
+        }
+        renderGrid('all');
     </script>
 </body>
 </html>

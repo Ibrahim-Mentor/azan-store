@@ -1,6 +1,5 @@
-/* ============ ZAYNAR CORE LOGIC 2025 ============ */
+/* ============ ZAYNAR ENGINE ============ */
 
-// 1. PRODUCT DATA
 const products = {
     'patek-silver': { name: 'Patek Philippe Nautilus', price: 450, img: 'img/product 1.jpg' },
     'rado-skeleton': { name: 'Rado True Square', price: 275, img: 'img/IMG-20251104-WA0016.jpg' },
@@ -14,142 +13,118 @@ const products = {
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// 2. INITIALIZATION
+// Init
 document.addEventListener('DOMContentLoaded', () => {
-    // Page Loader
-    setTimeout(() => document.body.classList.add('loaded'), 800);
-    
-    // Init Animations
-    initScrollAnimations();
-    
-    // Init Cart
+    initTheme();
+    initScroll();
     updateCartUI();
-    
-    // Event Listeners
-    setupEventListeners();
+    setupEvents();
 });
 
-// 3. EVENT LISTENERS
-function setupEventListeners() {
-    // Header Scroll Effect
+// Theme
+function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') document.body.classList.add('light-theme');
+    updateThemeIcon();
+}
+function toggleTheme() {
+    document.body.classList.toggle('light-theme');
+    localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+    updateThemeIcon();
+}
+function updateThemeIcon() {
+    const btn = document.getElementById('theme-btn');
+    if(btn) btn.innerHTML = document.body.classList.contains('light-theme') ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+}
+
+// Scroll Animations
+function initScroll() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up, .scroll-reveal').forEach(el => observer.observe(el));
+}
+
+// Cart Logic
+function setupEvents() {
     window.addEventListener('scroll', () => {
-        const header = document.getElementById('main-header');
-        if (window.scrollY > 50) header.classList.add('scrolled');
-        else header.classList.remove('scrolled');
+        const h = document.getElementById('main-header');
+        if(h) window.scrollY > 50 ? h.classList.add('scrolled') : h.classList.remove('scrolled');
     });
 
-    // Mobile Menu
-    const menuBtn = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if(menuBtn){
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            const icon = menuBtn.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-xmark');
-        });
-    }
-
-    // Cart Drawer
-    const cartToggle = document.getElementById('cart-toggle');
-    const closeCart = document.getElementById('close-cart');
-    const overlay = document.getElementById('overlay');
     const drawer = document.getElementById('cart-drawer');
-
-    function toggleDrawer() {
-        drawer.classList.toggle('open');
+    const overlay = document.getElementById('overlay');
+    
+    const toggleDrawer = () => {
+        drawer.classList.toggle('active');
         overlay.classList.toggle('active');
     }
 
-    if(cartToggle) cartToggle.addEventListener('click', toggleDrawer);
-    if(closeCart) closeCart.addEventListener('click', toggleDrawer);
-    if(overlay) overlay.addEventListener('click', toggleDrawer);
+    document.getElementById('cart-trigger')?.addEventListener('click', toggleDrawer);
+    document.getElementById('close-drawer')?.addEventListener('click', toggleDrawer);
+    overlay?.addEventListener('click', toggleDrawer);
+    document.getElementById('theme-btn')?.addEventListener('click', toggleTheme);
 
-    // Add to Cart Delegation
+    // Mobile Menu
+    const mm = document.getElementById('mobile-menu');
+    document.getElementById('menu-trigger')?.addEventListener('click', () => {
+        mm.classList.toggle('active');
+    });
+
+    // Add to Cart
     document.body.addEventListener('click', (e) => {
         const btn = e.target.closest('.add-to-cart');
-        if (btn) {
-            const id = btn.dataset.id;
-            addToCart(id);
-            // Open drawer to show confirmation
-            if(!drawer.classList.contains('open')) toggleDrawer();
+        if(btn) {
+            addToCart(btn.dataset.id);
+            if(!drawer.classList.contains('active')) toggleDrawer();
         }
-        
-        if (e.target.classList.contains('remove-item')) {
-            const index = e.target.dataset.index;
-            cart.splice(index, 1);
-            saveCart();
-            updateCartUI();
+        if(e.target.classList.contains('remove-item')) {
+            removeFromCart(e.target.dataset.index);
         }
     });
 }
 
-// 4. CART FUNCTIONS
 function addToCart(id) {
-    const product = products[id];
-    if(!product) return;
-
-    const existing = cart.find(item => item.id === id);
-    if(existing) {
-        existing.qty++;
-    } else {
-        cart.push({ id, ...product, qty: 1 });
-    }
+    const p = products[id];
+    if(!p) return;
+    const exist = cart.find(x => x.id === id);
+    exist ? exist.qty++ : cart.push({id, ...p, qty:1});
     saveCart();
-    updateCartUI();
 }
 
-function updateCartUI() {
-    const countEl = document.getElementById('cart-count');
-    const itemsContainer = document.getElementById('cart-items');
-    const totalEl = document.getElementById('cart-total-price');
-    
-    if(!itemsContainer) return;
-
-    let total = 0;
-    let count = 0;
-    
-    if (cart.length === 0) {
-        itemsContainer.innerHTML = '<div class="empty-cart-msg" style="text-align:center; color:#888; margin-top:50px;">Your bag is empty.</div>';
-    } else {
-        itemsContainer.innerHTML = cart.map((item, index) => {
-            total += item.price * item.qty;
-            count += item.qty;
-            return `
-                <div class="cart-item">
-                    <img src="${item.img}" alt="${item.name}">
-                    <div class="item-details">
-                        <h4>${item.name}</h4>
-                        <div class="item-price">$${item.price} x ${item.qty}</div>
-                        <span class="remove-item" data-index="${index}">Remove</span>
-                    </div>
-                </div>
-            `;
-        }).join('');
-    }
-
-    if(countEl) {
-        countEl.innerText = count;
-        countEl.style.display = count > 0 ? 'flex' : 'none';
-    }
-    if(totalEl) totalEl.innerText = `$${total.toFixed(2)}`;
+function removeFromCart(idx) {
+    cart.splice(idx, 1);
+    saveCart();
 }
 
 function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartUI();
 }
 
-// 5. SCROLL ANIMATIONS (Intersection Observer)
-function initScrollAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
+function updateCartUI() {
+    const c = document.getElementById('cart-items');
+    const t = document.getElementById('cart-total');
+    const n = document.getElementById('cart-count');
+    if(!c) return;
 
-    document.querySelectorAll('.fade-up, .scroll-reveal').forEach(el => {
-        observer.observe(el);
+    let total = 0, count = 0;
+    c.innerHTML = cart.length ? '' : '<p class="text-center" style="color:var(--text-secondary); margin-top:50px;">Empty Bag</p>';
+    
+    cart.forEach((item, i) => {
+        total += item.price * item.qty;
+        count += item.qty;
+        c.innerHTML += `
+        <div class="cart-item">
+            <img src="${item.img}">
+            <div>
+                <h4>${item.name}</h4>
+                <p>$${item.price} x ${item.qty}</p>
+                <span class="remove-item" data-index="${i}" style="color:red; cursor:pointer; font-size:0.8rem;">Remove</span>
+            </div>
+        </div>`;
     });
+    
+    if(t) t.innerText = `$${total.toFixed(2)}`;
+    if(n) n.innerText = count;
 }

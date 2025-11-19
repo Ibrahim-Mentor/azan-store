@@ -2,114 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Detail | ZAYNAR</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo.jpg" />
-    <style>
-        /* Specific Detail Page Styles */
-        .detail-container {
-            display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh;
-            padding-top: var(--header-height);
-        }
-        .detail-image {
-            background: #121212; display: flex; align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
-        }
-        .detail-image img { max-width: 80%; box-shadow: 0 20px 50px rgba(0,0,0,0.5); transition: 0.5s; }
-        .detail-image:hover img { transform: scale(1.05); }
-        
-        .detail-content {
-            padding: 80px; display: flex; flex-direction: column; justify-content: center;
-            background: var(--bg-dark);
-        }
-        .detail-eyebrow { color: var(--accent-gold); letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 15px; }
-        .detail-title { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
-        .detail-price { font-size: 2rem; color: var(--text-muted); margin-bottom: 40px; font-family: var(--font-body); }
-        .detail-desc { color: var(--text-muted); margin-bottom: 40px; max-width: 500px; }
-        
-        .features-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px;
-            border-top: 1px solid var(--border-light); padding-top: 30px;
-        }
-        .feature-item { display: flex; align-items: center; gap: 10px; color: var(--text-main); font-size: 0.9rem; }
-        .feature-item i { color: var(--accent-gold); }
-        
-        @media(max-width: 900px) {
-            .detail-container { grid-template-columns: 1fr; }
-            .detail-image { padding: 60px 20px; }
-            .detail-content { padding: 40px 20px; }
-        }
-    </style>
 </head>
 <body>
-    
     <header id="main-header">
         <div class="header-inner">
             <nav class="desktop-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="shop.html" class="nav-link">Collection</a>
+                <a href="about.html" class="nav-link">Legacy</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
             <a href="index.html" class="brand-logo">ZAYNAR</a>
             <div class="header-actions">
-                <button id="cart-toggle" class="icon-link"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
+                <button id="theme-btn" class="icon-link"><i class="fa-solid fa-sun"></i></button>
+                <a href="account.html" class="icon-link"><i class="fa-regular fa-user"></i></a>
+                <button id="cart-trigger" class="icon-link"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
             </div>
         </div>
     </header>
 
-    <div class="detail-container">
-        <div class="detail-image fade-up">
-            <img id="p-img" src="" alt="Product Image">
-        </div>
-        <div class="detail-content fade-up delay-1">
-            <span class="detail-eyebrow">Exclusive Collection</span>
-            <h1 class="detail-title" id="p-name">Loading...</h1>
-            <div class="detail-price" id="p-price">$0.00</div>
-            <p class="detail-desc">
-                Experience the epitome of luxury. Meticulously crafted for those who appreciate the finer details in life.
-            </p>
-            
-            <button class="btn primary-btn add-to-cart" id="add-btn" data-id="">Add to Bag</button>
-            
-            <div class="features-grid">
-                <div class="feature-item"><i class="fa-solid fa-gem"></i> 100% Authentic</div>
-                <div class="feature-item"><i class="fa-solid fa-box"></i> Premium Box</div>
-                <div class="feature-item"><i class="fa-solid fa-shield-halved"></i> 1 Year Warranty</div>
-                <div class="feature-item"><i class="fa-solid fa-truck-fast"></i> Free Shipping</div>
+    <main>
+        <section class="container section-spacing" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding-top: 150px;">
+            <div class="card-img fade-up" style="background: #000;">
+                <img id="p-img" src="" alt="Product">
             </div>
-        </div>
-    </div>
+            <div class="fade-up delay-1" style="display: flex; flex-direction: column; justify-content: center;">
+                <span class="eyebrow">ZAYNAR Collection</span>
+                <h1 id="p-name" style="font-size: 3rem; margin-bottom: 10px;">Loading...</h1>
+                <div id="p-price" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 30px;">$0.00</div>
+                <p style="margin-bottom: 40px;">Meticulously crafted for the modern individual. Features premium materials and Swiss-inspired movement.</p>
+                <button id="add-btn" class="btn btn-primary add-to-cart" data-id="">Add to Bag</button>
+                <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.9rem;">
+                    <div><i class="fa-solid fa-check"></i> 1 Year Warranty</div>
+                    <div><i class="fa-solid fa-truck"></i> Free Shipping</div>
+                </div>
+            </div>
+        </section>
 
-    <div id="cart-drawer">
-        <div class="cart-header"><h3>Shopping Bag</h3><button id="close-cart"><i class="fa-solid fa-xmark"></i></button></div>
-        <div id="cart-items"></div>
-        <div class="cart-footer">
-            <div class="cart-total"><span>Total</span><span id="cart-total-price">$0.00</span></div>
-            <a href="checkout.html" class="btn primary-btn full-width">Checkout</a>
-        </div>
-    </div>
+        <section class="section-spacing" style="background: var(--bg-panel);">
+            <div class="container text-center">
+                <div class="section-header"><h2>Specifications</h2></div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <div><h4>Movement</h4><p>Quartz / Automatic</p></div>
+                    <div><h4>Glass</h4><p>Sapphire Crystal</p></div>
+                    <div><h4>Water Resistance</h4><p>3 ATM</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-spacing inner-circle">
+            <div class="container text-center">
+                <h2>Join the Inner Circle</h2>
+                <form class="newsletter-form"><input type="email" placeholder="Email"><button type="submit"><i class="fa-solid fa-arrow-right"></i></button></form>
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-drawer"><div class="drawer-header"><h3>Shopping Bag</h3><button id="close-drawer"><i class="fa-solid fa-xmark"></i></button></div><div id="cart-items" class="drawer-content"></div><div class="drawer-footer"><div style="display:flex; justify-content:space-between;"><span>Total</span><span id="cart-total">$0.00</span></div><a href="checkout.html" class="btn btn-primary" style="width:100%; display:block; text-align:center; margin-top:20px;">Checkout</a></div></div>
     <div id="overlay"></div>
+    <footer><div class="container footer-grid"><div><div class="brand-logo">ZAYNAR</div><p>Timeless elegance.</p></div><div class="footer-links"><h4>Shop</h4><a href="shop.html">All</a><a href="track-order.html">Track</a></div><div class="footer-links"><h4>Support</h4><a href="contact.html">Contact</a><a href="faq.html">FAQ</a></div><div class="footer-links"><h4>Social</h4><a href="#">Insta</a></div></div><div class="footer-bottom">&copy; 2025 ZAYNAR.</div></footer>
 
     <script src="script.js"></script>
     <script>
-        // Logic to populate product details from URL param
-        document.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            const id = params.get('product');
-            
-            if(id && products[id]) {
-                const p = products[id];
-                document.getElementById('p-name').innerText = p.name;
-                document.getElementById('p-price').innerText = '$' + p.price;
-                document.getElementById('p-img').src = p.img;
-                document.getElementById('add-btn').dataset.id = id;
-                document.title = p.name + " | ZAYNAR";
-            } else {
-                document.querySelector('.detail-content').innerHTML = "<h2>Product not found.</h2><a href='shop.html' class='btn secondary-btn'>Back to Shop</a>";
-            }
-        });
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('product');
+        if(id && products[id]) {
+            const p = products[id];
+            document.getElementById('p-name').innerText = p.name;
+            document.getElementById('p-price').innerText = '$'+p.price;
+            document.getElementById('p-img').src = p.img;
+            document.getElementById('add-btn').dataset.id = id;
+        }
     </script>
 </body>
 </html>
