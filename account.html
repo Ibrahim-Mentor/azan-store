@@ -12,9 +12,29 @@
 <body>
     <header id="main-header">
         <div class="header-inner">
-            <a href="index.html" class="brand-logo" style="position:static; transform:none; margin: 0 auto;">ZAYNAR</a>
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Collection</a>
+                <a href="about.html" class="nav-link">Legacy</a>
+            </nav>
+            <a href="index.html" class="brand-logo">ZAYNAR</a>
+            <div class="header-actions">
+                <a href="contact.html" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
+                <a href="account.html" class="icon-link active"><i class="fa-regular fa-user"></i></a>
+                <button id="cart-toggle" class="icon-link"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
+                <button id="menu-toggle" class="icon-link mobile-only"><i class="fa-solid fa-bars"></i></button>
+            </div>
         </div>
     </header>
+    
+    <div id="mobile-menu">
+        <div class="menu-content">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Collection</a>
+            <a href="contact.html">Contact</a>
+            <a href="account.html">Account</a>
+        </div>
+    </div>
 
     <main style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: url('img/a2.jpg') center/cover; position: relative;">
         <div class="overlay"></div>
@@ -23,10 +43,10 @@
             <h2 style="text-align: center; margin-bottom: 30px;">Member Access</h2>
             
             <div style="margin-bottom: 20px;">
-                <input type="email" placeholder="Email" style="width: 100%; padding: 15px; background: var(--bg-dark); border: 1px solid var(--border-light); color: white;">
+                <input type="email" placeholder="Email" style="width: 100%; padding: 15px; background: var(--bg-dark); border: 1px solid var(--border-light); color: white; outline:none; transition:0.3s;">
             </div>
             <div style="margin-bottom: 30px;">
-                <input type="password" placeholder="Password" style="width: 100%; padding: 15px; background: var(--bg-dark); border: 1px solid var(--border-light); color: white;">
+                <input type="password" placeholder="Password" style="width: 100%; padding: 15px; background: var(--bg-dark); border: 1px solid var(--border-light); color: white; outline:none; transition:0.3s;">
             </div>
             
             <button class="btn primary-btn full-width">Sign In</button>
@@ -36,5 +56,48 @@
             </p>
         </div>
     </main>
+
+    <div id="cart-drawer">
+        <div class="cart-header"><h3>Shopping Bag</h3><button id="close-cart"><i class="fa-solid fa-xmark"></i></button></div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><span id="cart-total-price">$0.00</span></div>
+            <a href="checkout.html" class="btn primary-btn full-width">Checkout</a>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">ZAYNAR</div>
+                <p>Elevating style through precision and luxury.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <a href="shop.html">All Products</a>
+                <a href="shop.html">New Arrivals</a>
+                <a href="track-order.html">Track Order</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="shipping-returns.html">Shipping & Returns</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Connected</h4>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ZAYNAR. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

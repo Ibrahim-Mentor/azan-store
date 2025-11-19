@@ -14,6 +14,7 @@
         .faq-a { padding: 0 20px; height: 0; overflow: hidden; transition: 0.3s; color: var(--text-muted); }
         .faq-item.active .faq-a { padding: 20px; height: auto; border-top: 1px solid var(--border-light); }
         .faq-item.active .faq-q { color: var(--accent-gold); }
+        .faq-category-title { color: var(--accent-gold); margin: 40px 0 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -22,29 +23,62 @@
             <nav class="desktop-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="shop.html" class="nav-link">Collection</a>
+                <a href="about.html" class="nav-link">Legacy</a>
             </nav>
             <a href="index.html" class="brand-logo">ZAYNAR</a>
             <div class="header-actions">
+                <a href="contact.html" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
+                <a href="account.html" class="icon-link"><i class="fa-regular fa-user"></i></a>
                 <button id="cart-toggle" class="icon-link"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
+                <button id="menu-toggle" class="icon-link mobile-only"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
 
+    <div id="mobile-menu">
+        <div class="menu-content">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Collection</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
     <main style="padding-top: 150px; max-width: 800px; margin: 0 auto; padding-bottom: 100px; padding-left: 20px; padding-right: 20px;">
-        <h1 class="text-center fade-up" style="margin-bottom: 50px;">Frequently Asked</h1>
+        <div class="text-center fade-up" style="margin-bottom: 60px;">
+            <h1>Frequently Asked</h1>
+            <p style="color: var(--text-muted);">Common questions about our products and services.</p>
+        </div>
         
         <div class="faq-list fade-up delay-1">
+            
+            <h4 class="faq-category-title">General</h4>
             <div class="faq-item">
                 <div class="faq-q">Are your products authentic? <i class="fa-solid fa-plus"></i></div>
-                <div class="faq-a">Yes, every ZAYNAR timepiece and accessory is 100% authentic and undergoes rigorous quality checks.</div>
+                <div class="faq-a">Yes, every ZAYNAR timepiece and accessory is 100% authentic and undergoes rigorous quality checks before dispatch.</div>
             </div>
+            <div class="faq-item">
+                <div class="faq-q">Do you have a physical store? <i class="fa-solid fa-plus"></i></div>
+                <div class="faq-a">Currently, we operate exclusively online to maintain competitive pricing and offer nationwide reach.</div>
+            </div>
+
+            <h4 class="faq-category-title">Orders & Shipping</h4>
             <div class="faq-item">
                 <div class="faq-q">What is your shipping policy? <i class="fa-solid fa-plus"></i></div>
-                <div class="faq-a">We offer nationwide shipping in Pakistan. Deliveries typically take 2-5 business days.</div>
+                <div class="faq-a">We offer nationwide shipping in Pakistan. Deliveries typically take 2-5 business days depending on the city.</div>
             </div>
             <div class="faq-item">
+                <div class="faq-q">Can I check the parcel before payment? <i class="fa-solid fa-plus"></i></div>
+                <div class="faq-a">We offer an "Open Parcel" policy for select locations. Please confirm with our support team on WhatsApp before placing your order.</div>
+            </div>
+
+            <h4 class="faq-category-title">Warranty & Care</h4>
+            <div class="faq-item">
                 <div class="faq-q">Do you offer warranties? <i class="fa-solid fa-plus"></i></div>
-                <div class="faq-a">All our watches come with a standard 1-year movement warranty.</div>
+                <div class="faq-a">All our watches come with a standard 1-year movement warranty. This covers mechanical faults but excludes physical damage.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Are the watches waterproof? <i class="fa-solid fa-plus"></i></div>
+                <div class="faq-a">Most of our collection is water-resistant (3ATM). This means they can withstand splashes and rain, but should not be worn while swimming or showering.</div>
             </div>
         </div>
     </main>
@@ -59,11 +93,46 @@
     </div>
     <div id="overlay"></div>
 
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">ZAYNAR</div>
+                <p>Elevating style through precision and luxury.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <a href="shop.html">All Products</a>
+                <a href="shop.html">New Arrivals</a>
+                <a href="track-order.html">Track Order</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="shipping-returns.html">Shipping & Returns</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Connected</h4>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ZAYNAR. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
     <script>
         document.querySelectorAll('.faq-q').forEach(item => {
             item.addEventListener('click', () => {
                 item.parentElement.classList.toggle('active');
+                const icon = item.querySelector('i');
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
             });
         });
     </script>

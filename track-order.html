@@ -16,13 +16,25 @@
             <nav class="desktop-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="shop.html" class="nav-link">Collection</a>
+                <a href="about.html" class="nav-link">Legacy</a>
             </nav>
             <a href="index.html" class="brand-logo">ZAYNAR</a>
             <div class="header-actions">
                 <a href="contact.html" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
+                <a href="account.html" class="icon-link"><i class="fa-regular fa-user"></i></a>
+                <button id="cart-toggle" class="icon-link"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
+                <button id="menu-toggle" class="icon-link mobile-only"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
+
+    <div id="mobile-menu">
+        <div class="menu-content">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Collection</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
 
     <main style="min-height: 100vh; padding-top: 150px; background: var(--bg-dark);">
         <section class="text-center fade-up" style="max-width: 600px; margin: 0 auto; padding: 0 20px;">
@@ -37,12 +49,17 @@
 
         <section style="max-width: 800px; margin: 80px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;" class="fade-up delay-1">
             <div>
-                <h4 style="color: var(--accent-gold); margin-bottom: 15px;">Where is my Order ID?</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">You can find your Order ID in the confirmation email sent to you immediately after purchase, or in the WhatsApp confirmation message.</p>
+                <h4 style="color: var(--accent-gold); margin-bottom: 15px;">Tracking Guide</h4>
+                <ul style="list-style: none; padding: 0; color: var(--text-muted); font-size: 0.9rem;">
+                    <li style="margin-bottom: 10px;"><strong style="color:#fff;">Processing:</strong> Order received, pending verification.</li>
+                    <li style="margin-bottom: 10px;"><strong style="color:#fff;">Dispatched:</strong> Handed over to courier (TCS/Leopards).</li>
+                    <li style="margin-bottom: 10px;"><strong style="color:#fff;">In Transit:</strong> On its way to your city.</li>
+                </ul>
             </div>
             <div>
-                <h4 style="color: var(--accent-gold); margin-bottom: 15px;">Delivery Times</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Standard shipping within Pakistan takes 2-5 working days. If your order is delayed, please contact our concierge.</p>
+                <h4 style="color: var(--accent-gold); margin-bottom: 15px;">Need Help?</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">If your order is delayed beyond 5 working days, please contact our concierge immediately.</p>
+                <a href="contact.html" style="color: white; border-bottom: 1px solid var(--accent-gold); font-size: 0.9rem; margin-top: 10px; display: inline-block;">Contact Support</a>
             </div>
         </section>
     </main>
@@ -57,6 +74,37 @@
     </div>
     <div id="overlay"></div>
 
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">ZAYNAR</div>
+                <p>Elevating style through precision and luxury.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <a href="shop.html">All Products</a>
+                <a href="shop.html">New Arrivals</a>
+                <a href="track-order.html">Track Order</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="shipping-returns.html">Shipping & Returns</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Connected</h4>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ZAYNAR. All Rights Reserved.</p>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

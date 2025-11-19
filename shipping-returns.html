@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shipping & Returns | ZAYNAR</title>
+    <title>Policies | ZAYNAR</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -12,11 +12,9 @@
         .policy-container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
         .policy-section { margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid var(--border-light); }
         .policy-section:last-child { border-bottom: none; }
-        
         .policy-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
         .policy-header i { color: var(--accent-gold); font-size: 1.5rem; }
         .policy-header h2 { margin: 0; font-size: 1.8rem; }
-        
         .policy-content p { margin-bottom: 15px; color: var(--text-muted); }
         .policy-content ul { list-style: none; padding-left: 20px; }
         .policy-content li { position: relative; margin-bottom: 10px; color: var(--text-main); }
@@ -35,9 +33,20 @@
             <a href="index.html" class="brand-logo">ZAYNAR</a>
             <div class="header-actions">
                 <a href="contact.html" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
+                <a href="account.html" class="icon-link"><i class="fa-regular fa-user"></i></a>
+                <button id="cart-toggle" class="icon-link"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
+                <button id="menu-toggle" class="icon-link mobile-only"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
+
+    <div id="mobile-menu">
+        <div class="menu-content">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Collection</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
 
     <main style="padding-top: 150px; min-height: 100vh;">
         <div class="text-center fade-up" style="margin-bottom: 80px;">
@@ -94,6 +103,11 @@
             </div>
 
         </div>
+        
+        <div class="text-center" style="padding: 50px 20px; background: var(--bg-panel); margin-top: 50px;">
+            <h3>Still have questions?</h3>
+            <a href="contact.html" class="btn secondary-btn" style="margin-top: 20px;">Contact Concierge</a>
+        </div>
     </main>
 
     <div id="cart-drawer">
@@ -107,9 +121,36 @@
     <div id="overlay"></div>
 
     <footer>
-        <div class="footer-bottom"><p>&copy; 2025 ZAYNAR. All Rights Reserved.</p></div>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">ZAYNAR</div>
+                <p>Elevating style through precision and luxury.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <a href="shop.html">All Products</a>
+                <a href="shop.html">New Arrivals</a>
+                <a href="track-order.html">Track Order</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="shipping-returns.html">Shipping & Returns</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Connected</h4>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ZAYNAR. All Rights Reserved.</p>
+        </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
