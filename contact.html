@@ -1,131 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - ZAYNAR</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/logo.jpg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concierge | ZAYNAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.jpg" />
+    <style>
+        .contact-hero {
+            height: 50vh; min-height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('img/a4.jpg') center/cover;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+        }
+        .contact-container {
+            max-width: 1100px; margin: -80px auto 100px; padding: 0 20px;
+            position: relative; z-index: 2;
+        }
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(20px);
+            border: 1px solid var(--border-light);
+            display: grid; grid-template-columns: 1fr 1fr;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+        .contact-form-section { padding: 60px; border-right: 1px solid var(--border-light); }
+        .contact-info-section { padding: 60px; background: rgba(255,255,255,0.02); display: flex; flex-direction: column; justify-content: center; }
+        
+        .info-item { margin-bottom: 40px; }
+        .info-item h4 { color: var(--accent-gold); font-size: 0.9rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .info-item p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
+        .info-item a { color: white; transition: 0.3s; }
+        .info-item a:hover { color: var(--accent-gold); }
+
+        input, textarea {
+            width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border-light);
+            padding: 15px 0; color: white; margin-bottom: 30px; outline: none; font-family: var(--font-body); transition: 0.3s;
+        }
+        input:focus, textarea:focus { border-bottom-color: var(--accent-gold); }
+
+        @media(max-width: 900px) {
+            .glass-panel { grid-template-columns: 1fr; }
+            .contact-form-section { border-right: none; border-bottom: 1px solid var(--border-light); }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <nav class="navbar">
-      <a href="index.html">
-      <div class="logo">ZAYNAR</div>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-      
-      <div class="nav-icons">
-        <a href="#" aria-label="My Account"><i class="fa-regular fa-user"></i></a>
-        <a href="#" id="cart-btn" aria-label="Open Cart">
-          <i class="fa-solid fa-bag-shopping"></i>
-          <span id="cart-item-count">0</span>
-        </a>
-        <a href="#" id="hamburger-btn" aria-label="Open Menu"><i class="fa-solid fa-bars-staggered"></i></a>
-      </div>
-    </nav>
-    
-    <div id="mobile-nav" class="mobile-nav-menu">
-        <a href="index.html" class="mobile-link">Home</a>
-        <a href="shop.html" class="mobile-link">Shop</a>
-        <a href="about.html" class="mobile-link">About</a>
-        <a href="contact.html" class="mobile-link">Contact</a>
-        <a href="faq.html" class="mobile-link">FAQ</a>
-        <a href="#" class="mobile-link">My Account</a>
-    </div>
-  </header>
-
-  <main>
-    <div class="contact-container" data-animate>
-        <h1>Get In Touch</h1>
-        <p style="text-align: center; color: var(--secondary-text); margin-top: -2rem; margin-bottom: 2.5rem;">Have a question? Fill out the form below or contact us on WhatsApp.</p>
-        
-        <form action="#" class="contact-form">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" class="form-control" required>
+    <header id="main-header">
+        <div class="header-inner">
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Collection</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+            <a href="index.html" class="brand-logo">ZAYNAR</a>
+            <div class="header-actions">
+                <button id="cart-toggle" class="icon-link"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
+                <button id="menu-toggle" class="icon-link mobile-only"><i class="fa-solid fa-bars"></i></button>
             </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" class="form-control" rows="6" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">Send Message</button>
-        </form>
-    </div>
-  </main>
-
-  <div id="cart-overlay"></div>
-  <aside id="cart-sidebar">
-    <div class="cart-header">
-      <h3>Your Bag</h3>
-      <button id="close-cart-btn" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div id="cart-list-container">
-      </div>
-    <div class="cart-footer">
-      <div class="subtotal-container">
-        <strong>Subtotal:</strong>
-        <span id="subtotal">$0.00</span>
-      </div>
-      <button class="btn btn-primary checkout-btn">Go to Checkout</button>
-    </div>
-  </aside>
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-column">
-        <h4>ZAYNAR</h4>
-        <p>Premium luxury products and fashion accessories. Minimalist elegance for the modern world.</p>
-      </div>
-      <div class="footer-column">
-        <h4>Shop</h4>
-        <a href="shop.html">All Products</a>
-        <a href="shop.html#watches">Watches</a>
-        <a href="shop.html#wallets">Wallets</a>
-      </div>
-      <div class="footer-column">
-        <h4>Support</h4>
-        <a href="contact.html">Contact Us</a>
-        <a href="faq.html">FAQ</a>
-        <a href="shipping-returns.html">Shipping & Returns</a>
-      </div>
-      <div class="footer-column">
-        <h4>Follow Us</h4>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/profile.php?id=61578607029967" target="blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/agdkwg4/" target="blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.tiktok.com/@zaynar408" target="blank" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
-      </div>
+    </header>
+    
+    <div id="mobile-menu">
+        <div class="menu-content">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Collection</a>
+            <a href="about.html">Legacy</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 ZAYNAR. All Rights Reserved.
+
+    <section class="contact-hero">
+        <div class="fade-up">
+            <h1>Concierge Service</h1>
+            <p style="color: var(--text-muted); margin-top: 15px;">At your service, 24/7.</p>
+        </div>
+    </section>
+
+    <main class="contact-container fade-up delay-1">
+        <div class="glass-panel">
+            <div class="contact-form-section">
+                <h3 style="margin-bottom: 30px;">Send a Message</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number (Optional)">
+                    <textarea rows="4" placeholder="How can we assist you today?" required></textarea>
+                    <button class="btn primary-btn full-width">Submit Request</button>
+                </form>
+            </div>
+
+            <div class="contact-info-section">
+                <div class="info-item">
+                    <h4><i class="fa-brands fa-whatsapp"></i> WhatsApp Support</h4>
+                    <p>Instant assistance for orders and inquiries.<br>
+                    <a href="https://wa.me/923001234567" target="_blank">+92 300 123 4567</a></p>
+                </div>
+                
+                <div class="info-item">
+                    <h4><i class="fa-solid fa-envelope"></i> Email Inquiries</h4>
+                    <p>For collaborations and detailed support.<br>
+                    <a href="mailto:support@zaynar.com">support@zaynar.com</a></p>
+                </div>
+
+                <div class="info-item">
+                    <h4><i class="fa-solid fa-clock"></i> Operating Hours</h4>
+                    <p>Monday - Saturday<br>10:00 AM - 10:00 PM (PKT)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cart-drawer">
+        <div class="cart-header"><h3>Shopping Bag</h3><button id="close-cart"><i class="fa-solid fa-xmark"></i></button></div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><span id="cart-total-price">$0.00</span></div>
+            <a href="checkout.html" class="btn primary-btn full-width">Checkout</a>
+        </div>
     </div>
-  </footer>
+    <div id="overlay"></div>
 
-  <script src="script.js"></script>
+    <footer>
+        <div class="footer-bottom"><p>&copy; 2025 ZAYNAR. All Rights Reserved.</p></div>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

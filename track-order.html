@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Track Order - ZAYNAR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/logo.jpg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order | ZAYNAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.jpg" />
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html"><div class="logo">ZAYNAR</div></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main style="padding: 6rem 20px; text-align: center; min-height: 60vh;">
-    <h1 class="section-title">Track Your <span>Order</span></h1>
-    <p style="color: var(--secondary-text); margin-bottom: 40px;">Enter your Order ID to see the current status.</p>
-    
-    <div style="max-width: 500px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 15px; border: 1px solid var(--border-color);">
-        <input type="text" placeholder="Order ID (e.g., #1023)" style="width: 100%; padding: 15px; background: var(--bg-color); border: 1px solid var(--border-color); color: var(--primary-text); margin-bottom: 20px; border-radius: 5px;">
-        <button class="btn btn-primary" style="width: 100%;">Track</button>
+    <header id="main-header">
+        <div class="header-inner">
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Collection</a>
+            </nav>
+            <a href="index.html" class="brand-logo">ZAYNAR</a>
+            <div class="header-actions">
+                <a href="contact.html" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main style="min-height: 100vh; padding-top: 150px; background: var(--bg-dark);">
+        <section class="text-center fade-up" style="max-width: 600px; margin: 0 auto; padding: 0 20px;">
+            <h1 style="margin-bottom: 20px;">Track Your Timepiece</h1>
+            <p style="color: var(--text-muted); margin-bottom: 50px;">Enter your Order ID to see the current status of your shipment.</p>
+            
+            <div style="background: var(--bg-panel); padding: 40px; border: 1px solid var(--border-light); border-radius: 4px;">
+                <input type="text" placeholder="Order ID (e.g., #1024)" style="width: 100%; background: var(--bg-dark); border: 1px solid var(--border-light); padding: 15px; color: white; margin-bottom: 20px; text-align: center; font-size: 1.1rem; letter-spacing: 1px; outline: none;">
+                <button class="btn primary-btn full-width">Track Status</button>
+            </div>
+        </section>
+
+        <section style="max-width: 800px; margin: 80px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;" class="fade-up delay-1">
+            <div>
+                <h4 style="color: var(--accent-gold); margin-bottom: 15px;">Where is my Order ID?</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">You can find your Order ID in the confirmation email sent to you immediately after purchase, or in the WhatsApp confirmation message.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--accent-gold); margin-bottom: 15px;">Delivery Times</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Standard shipping within Pakistan takes 2-5 working days. If your order is delayed, please contact our concierge.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-drawer">
+        <div class="cart-header"><h3>Shopping Bag</h3><button id="close-cart"><i class="fa-solid fa-xmark"></i></button></div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><span id="cart-total-price">$0.00</span></div>
+            <a href="checkout.html" class="btn primary-btn full-width">Checkout</a>
+        </div>
     </div>
-  </main>
+    <div id="overlay"></div>
 
-  <footer>
-    <div class="footer-bottom">&copy; 2025 ZAYNAR. All Rights Reserved.</div>
-  </footer>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
